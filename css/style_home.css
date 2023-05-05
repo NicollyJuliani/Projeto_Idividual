@@ -1,0 +1,206 @@
+*{
+    font-family: arial;
+}
+
+body{
+    margin:0;
+    padding: 0;
+    /* background-color: #ededed; */
+}
+
+header{
+    position: fixed;
+    display: flex;
+    margin: auto;
+    padding-bottom: 10px;
+    transition: 0.6s;
+    font-size: 17px;
+    
+} 
+
+
+header {
+    width: 100%;
+    display: flex;
+    z-index: 10000;
+    transition: 0.6s;
+}
+
+header.sticky{
+    padding: 4px 60px;
+    background: #FFFF; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+
+header ul li a{
+    transition: 0.6s;
+    
+}
+
+
+/*container*/
+.container{
+    display: flex;
+    width: 80%; 
+    margin:auto;
+}
+
+.img_fundo{
+    background-image: url('../img/banner.png');
+    background-size: cover;
+}
+
+/*Menu*/
+header .container{
+    justify-content: space-between;
+    
+}
+
+.navbar{
+    display: flex;
+    width: 500px;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+}
+/*O hover é uma propriedade do css que quando o cursor do mouse passar por cima dele, a função :hover é aplicada a ele. E as funções são determinadas temporariamente ao elemento*/
+.navbar a:hover{
+    color: #47077F;
+    transition: 0.6s;
+}
+.navbar li, .navbar a{
+    color: black;
+    text-decoration: none;
+}
+
+/*Banner*/
+.banner .container{
+    height: 640px;
+    /* justify-content: center;  */
+    align-items: center;
+}
+
+
+.frase_conteudo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    
+}
+
+.space{
+    font-size: 4.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.banner p{
+    width: 700px;
+    font-size: 2.5rem;
+    color: black;
+    margin-top: -15%;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.1;
+    margin-left: -13%;
+}
+
+/*conteudo*/
+.conteudo{
+    height:  680px ;
+    width: 90%;
+    margin-top: -1%;
+    background-color:white;
+    border-radius: 5px;
+    margin-left: 5%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*button*/
+button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    margin-top: 15%;
+  }
+  
+  button:hover {
+    background-color: #470b7be3;
+    box-shadow: 0px 15px 20px rgba(75, 4, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
+
+
+/*conteudo*/
+.conteudo_bigbang{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-left: -5%;
+}
+
+.bigbang {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.4rem;
+    
+    
+}
+
+.img_big_bang{
+    width: 350px;
+    height: 200px;
+    margin-top: 25%;
+    margin-left: 25%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.img_big_bang2{
+    width: 350px;
+    height: 200px;
+    margin-top: 20%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10%;
+}
+
+.paragrafo{
+    display: flex;
+    margin-left: 5%;
+    border-radius: 5px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  /*footer*/
+  .desktop_bottom{
+    /* position: absolute; */
+    display: flex;
+    height: 64px;
+    width: 100%;
+    margin: auto;
+    background-color: #470b7be3;
+    padding-bottom: 10px;
+    border-top: 2px solid  #470b7be3;
+    bottom: 0%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+

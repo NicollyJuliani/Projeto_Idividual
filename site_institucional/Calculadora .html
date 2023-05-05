@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Solution | Simulador Financeiro</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_calculadora.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+<header>
+        <div class="container">
+            <img class="img_logo" src="./images/image 8 1.png" alt="">
+            <ul class="navbar">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="" style="color: #a70000;"> Calculadora Financeira</a></li>
+                <li><a href="sobre_nos.html"> Sobre nós</a></li>
+                <li><a href="doação.html"> Informações sobre doação</a></li>
+                <li><a href="contato.html"> Fale Conosco</a></li>
+                <li><a href="login.html" id="login"> Log In</a></li>
+            </ul>
+
+    </div>
+</header>
+<script type="text/javascript">
+    window. addEventListener("scroll", function(){
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+    <div class="container_simulador">
+        <div class="container_calculadora">
+
+            <div class="bolinhas_calculadora">
+                <img class="green" src="./images/green.svg" alt="">
+                <img class="red" src="./images/red.svg" alt="">
+                <img class="yellow" src="./images/yellow.svg" alt="">
+            </div>
+
+            <b>
+                <h2> Simulador Financeiro </h2>
+            </b>
+
+            <center>
+                <div class="group">
+                    Valor da bolsa de sangue:
+                    <input required="" type="text" class="input" id="preco_bolsas">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label></label>
+                </div>
+            </center>
+            <br>
+
+            <center>
+                <div class="group">
+                    Quantidade de lote de bolsas de sangue por mês:
+                    <input required="" type="text" class="input" id="lotes">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label></label>
+                </div>
+            </center>
+
+            <br>
+            <center>
+                <div class="group">
+                    Quantidade de bolsas de Sangue por lote:
+                    <input required="" type="text" class="input" id="bolsa">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label></label>
+                </div>
+            </center>
+
+            <br>
+            <center>
+                <div class="group">
+                    Quantidade de bolsas de sangue perdida por lote:
+                    <input required="" type="text" class="input" id="perdas">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label></label>
+                </div>
+            </center>
+
+            <button class="button_calculadora" onclick="calcular()"> Simular </button>
+            <br>
+        </div>
+        <div class="texto" id="div_mensagem"></div>
+    </div>
+
+    <div class="desktop_bottom">
+        <p>Blood Solutions 1ADSC</p>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function calcular() {
+        var preco = Number(preco_bolsas.value)
+        var bolsas = Number(bolsa.value);
+        var lote = Number(lotes.value);
+        var perda = Number(perdas.value);
+
+        // valor da bolsa sem perda
+        var valor_total = lote * bolsas; // quantidade de lote * bolsas (para saber a quantidade sem a perda de bolsas)
+        var preco_bolsa = valor_total * preco; // valor total de bolsas * o preço das bolsas
+
+        // valor da bolsa com perda
+        var perda_bolsas = bolsas - perda; // quantidade de bolsas - perdas de bolsas (para saber a quantidade com perda)
+        var perda_malote = perda_bolsas * lote; // quantidade de bolsas - perdas 
+        var preco_perda = perda_malote * preco; // quantidade de bolsas por malote (com perda) * preco
+        // diferença
+        var total = preco_bolsa - preco_perda // total de dinheiro perdido
+        var total_perda = valor_total - perda_malote; // total de bolsas perdidas
+        var porcentagem_perda = (valor_total - perda_malote) / 100;
+
+        // vidas salvas!
+        var perda_vida = (perda * 4) * lote;
+
+        div_mensagem.innerHTML = `
+        <br> Uma bolsa de sangue salva em média: <b style="color:red;">4 vidas!</b> <br><br>
+        O valor total de bolsas de sangue da sua empresa é de: <br>
+        <b style="color:red;">${valor_total}</b> <br>
+        o equivalente mensal de: <br>
+        <b style="color:red;">R$${preco_bolsa}</b><br>
+        Mas com o número de perdas, seu total de bolsas de sangue agora é de:
+        <br><b style="color:red;">${perda_malote}</b><br> e mensal de: <br>
+         <b style="color:red;">R$${preco_perda}</b><br>
+        Implementando nosso projeto sua empresa reduzira as perdas em até:
+        <br> <b style="color:red;">${porcentagem_perda}%</b><br>
+        Isso o resultaria  um retorno de <b style="color:red;">R$${total}</b> mensal. <br><br>
+        Além de poder salvar em até <b style="color:red;">${perda_vida}</b> vidas a mais.`
+    }
+</script>

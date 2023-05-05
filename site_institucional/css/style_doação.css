@@ -1,0 +1,189 @@
+
+h4{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.3px;
+    color: #737B7D;
+}
+
+.form{
+    background-color: #F5ECEC;
+    padding: 10px;
+    display: flex;
+}
+
+.formulario{
+    background-color: white;
+    display: flex;
+    align-items: flex;
+    flex-direction: 0;
+    height: 1px;
+    margin-top: 110px;
+    border: 1px solid red;
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.form .container{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .campos{
+    width: 85%;
+    height: 35px;
+    margin-top: 10%;
+}
+
+.form span{
+    float: left;
+    display: flex;
+    font-size: 10px;
+}
+
+.form button{
+    width: 150px;
+    height: 50px;
+    background-color: #A70000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+#doacao{
+    margin-left: 10px;
+    margin-right: 100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 56px;
+    letter-spacing: 0.2px;
+    color: #373F41;
+
+}
+.formulario span{
+    color: red;
+    font-size: 20px;
+    align-items: center;
+}
+.imagem{
+    margin-bottom: 110px;
+}
+.descricao{
+    background-color: #FFFFFF;
+    padding: 10px;
+    display: flex;    
+}
+.desc{
+    background-color: #F5ECEC;
+    display: flex;
+    align-items: center;
+    flex-direction: 0;
+    width: 100%;
+    height: 150px;
+    border: 1px solid red;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.bolinhas{
+    left: 57%;
+    top: 20.5%;
+}
+
+.card1 {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: #FFCDCD;
+    border-radius: 4px;
+    padding: 60px 24px;
+    margin-left: 3%;
+    margin-right: 2%;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+ .card1 h3 {
+    color: #262626;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+ .card1 p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #666666;
+  }
+
+  .card1 .identity{
+    text-align: left;
+  }
+
+  .card1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #FF7659;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  .card1:hover:before {
+    transform: scale(21);
+  }
+  
+  .card1:hover p {
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .card1:hover h3 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: #FF7659;
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+  }
+  

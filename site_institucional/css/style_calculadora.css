@@ -1,0 +1,166 @@
+/* Container */
+.container_simulador{
+    display: flex;
+    flex-direction: row; 
+    font-family: arial;
+}      
+
+.container_calculadora {
+    text-align: center;
+    margin-top: 8.5%;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-left: 8%;
+    width: 560px;
+    height: 435px;
+   
+}
+
+h2{
+    font-family: arial;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid red;
+    margin-top: 7px;
+}
+/* .h2{
+    border-bottom: 1px solid red;
+} */
+.bolinhas_calculadora{
+    position: absolute;
+    bottom: 78%;
+    left: 9%;
+}
+ /* botão */
+.button_calculadora {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    margin-top: 20px;
+    font-family: arial;
+    border: none;
+    
+}
+
+.button_calculadora:hover {    
+    background-color: crimson;
+    transform: scale(1.1);
+    transition: 0.5s;
+
+}
+
+/* Frase */
+.texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 10%;
+    width: 54%;
+}
+
+
+/*input */
+.group {
+    position: relative;
+    font-family: arial;
+
+}
+
+.input {
+    font-size: 16px;
+    text-align: center;
+    font-family: arial;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input:focus~label,
+.input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: red;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: red;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus~.bar:before,
+.input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus~.highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* @keyframes inputHighlighter {
+    from {
+        background: red;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+} */
