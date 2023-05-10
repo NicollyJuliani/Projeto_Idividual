@@ -207,14 +207,15 @@ button:active {
 /*sol*/
 /* .img_sol{
     align-items: center;
-    height: 350px;
+    
 }
 .sol {
     background-image: url('../img/sol.png');
     background-size: cover;
     box-shadow: inset 6px 6px 10px 0px rgba(0, 0, 0, 0.774); 
     background-attachment: fixed;
-} */
+    height: 50px
+}  */
 
 /*cards dos planetas*/
 .planetas {
@@ -222,9 +223,10 @@ button:active {
     width: 90%;
     margin-top: 5%;
     background-color: white;
-    border-radius: 5px;
-    margin-left: 5%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: black;
+    border-radius: 5px; 
+    margin-left: 5%; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .organizar {
@@ -370,3 +372,128 @@ video{
     align-items: center;
     text-align: center;
 }
+
+
+
+/*cards*/
+.cards{
+    height: auto;
+    width: 90%;
+    margin-top: 5%;
+    background-color: white;
+    color: black;
+    border-radius: 5px; 
+    margin-left: 5%; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.recursos{
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.cards .card{
+    margin-right: 5%;
+    /* margin-left: 5%; */
+    margin-top: 0;
+}
+
+/* .cards .card{
+    position: relative;
+    cursor: pointer;
+} */
+
+.cards .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+ .cards .card .face.face1{
+    position: relative;
+    background: #8d30df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+} 
+
+.cards .card:hover .face.face1{
+    background: #47077F;
+    transform: translateY(0);
+}
+
+
+.cards .card .face.face1 .content{
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.cards .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.cards .card .face.face1 .content img{
+    position: relative;
+    width: 150px;
+    max-width: 100px;
+} */
+
+/* .container .card .face.face1 .content .suporte{
+    left: 20%;
+} */
+
+ .cards .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    font-size: 1.5em;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.cards .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.cards .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+} 
+
+
+
+/* 
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 0.5px solid #000;
+    border-radius: 10px;
+} */
+
+/* .container .card .face.face2 .content a:hover{
+    background: crimson;
+    transition: 0.6s;
+    transform: scale(1.1);
+    color: #fff;
+} */
