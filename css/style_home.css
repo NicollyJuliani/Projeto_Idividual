@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     /* background-color: #ededed; */
+    background-color: #DCDCDC;
 }
 
 header {
@@ -29,7 +30,7 @@ header {
 header.sticky {
     padding: 4px 60px;
     background: #FFFF;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 
 }
 
@@ -50,10 +51,9 @@ header ul li a {
 /*banner fundo*/
 .img_fundo {
     background-image: url('../img/banner.png');
- 
     background-size: cover;
     background-attachment: fixed;
-}
+} 
 
 /*Menu*/
 header .container {
@@ -145,11 +145,11 @@ button:active {
 /*conteudo*/
 .conteudo {
     height: auto;
-    width: 90%;
+    width: 95%;
     margin-top: -1%;
     background-color: white;
     border-radius: 5px;
-    margin-left: 5%;
+    margin-left: 2.5%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -157,7 +157,7 @@ button:active {
 .conteudo_bigbang {
     display: flex;
     flex-direction: column;
-    margin-top: 8%;
+    margin-top: 4%;
     margin-left: -5%;
 }
 
@@ -204,43 +204,23 @@ button:active {
 }
 
 
-/*sol*/
-/* .img_sol{
-    align-items: center;
-    
-}
-.sol {
-    background-image: url('../img/sol.png');
-    background-size: cover;
-    box-shadow: inset 6px 6px 10px 0px rgba(0, 0, 0, 0.774); 
-    background-attachment: fixed;
-    height: 50px
-}  */
+
+
 
 /*cards dos planetas*/
-.planetas {
-    height: auto;
-    width: 90%;
-    margin-top: 5%;
-    background-color: white;
-    color: black;
-    border-radius: 5px; 
-    margin-left: 5%; 
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
-}
-
-.organizar {
-    margin-top: 5%;
+.organizador {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .titulo_2 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2.4rem;
     width: 900px;
-    display: flex;
-    justify-content: center;
+    margin-left: 25%;
     margin-bottom: 2%;
-    margin-top: -5%;
+    margin-top: 5%;
 }
 
 .paragrafo_2 {
@@ -250,43 +230,102 @@ button:active {
     font-size: 1.1rem;
     /* margin-left: -5%; */
     width: 90%;
-    justify-content: center;
-    align-items: center;
+    margin-left: 5%;
 }
 
-.boxes {
-    display: flex;
-    padding: 50px 0;
-    gap: 8px;
-    margin-left: -7%;
+.sessoes {
+    height: auto;
+    width: 95%;
+    margin-top: 1.5%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-left: 2.5%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.box {
-    display: flex;
+.recursos {
     flex-direction: row;
-    align-items: center;
-    width: 550px;
-    height: 180px;
+    justify-content: space-around;
+    width: 90%;
 }
 
-.box img {
-    width: 170px;
+.card {
+    margin-right: 5%;
+    margin-top: -2%;
 }
 
-img:hover {
-    transform: scale(1.1);
-    transition: all 0.5s;
+.cards .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    border-radius: 10px;
 }
 
-.box h4 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5rem;
+.cards .card .face.face1 {
+    position: relative;
+    background: #8d30df;
     display: flex;
     justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.cards .card:hover .face.face1 {
+    background: #47077F;
+    transform: translateY(0);
+}
+
+
+.cards .card .face.face1 .content {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.cards .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.cards .card .face.face1 .content img {
+    position: relative;
+    width: 150px;
+    max-width: 100px;
+}
+
+h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.cards .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.cards .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.cards .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
 }
 
 /*viagem espacial*/
-.viagem{
+.viagem {
     height: auto;
     width: 90%;
     margin-top: 2%;
@@ -296,7 +335,7 @@ img:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.conteudo_viagem{
+.conteudo_viagem {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
@@ -304,24 +343,24 @@ img:hover {
     margin-left: -5%;
 }
 
-video{
+video {
     width: 10%;
 }
 
-.titulo_3{
+.titulo_3 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2.4rem;
-    width: 900px;   
+    width: 900px;
     margin-top: -5%;
     margin-left: 10%;
 }
 
-.divisao{
+.divisao {
     display: flex;
     flex-direction: row;
 }
 
-.paragrafo_3{
+.paragrafo_3 {
     display: flex;
     border-radius: 5px;
     line-height: 1.6;
@@ -333,24 +372,25 @@ video{
 }
 
 
-.paragrafo_4{
+.paragrafo_4 {
     display: flex;
     border-radius: 5px;
     line-height: 1.6;
     font-size: 1.1rem;
     width: 90%;
     margin-left: 5%;
-    margin-top: 0% ;
+    margin-top: 0%;
 }
 
-.img_sputnik{
+.img_sputnik {
     width: 350px;
     height: 250px;
     margin-top: 7%;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.sputnik{
+
+.sputnik {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -372,128 +412,3 @@ video{
     align-items: center;
     text-align: center;
 }
-
-
-
-/*cards*/
-.cards{
-    height: auto;
-    width: 90%;
-    margin-top: 5%;
-    background-color: white;
-    color: black;
-    border-radius: 5px; 
-    margin-left: 5%; 
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
-}
-
-.recursos{
-    flex-direction: row;
-    justify-content: space-around;
-    width: 90%;
-}
-
-.cards .card{
-    margin-right: 5%;
-    /* margin-left: 5%; */
-    margin-top: 0;
-}
-
-/* .cards .card{
-    position: relative;
-    cursor: pointer;
-} */
-
-.cards .card .face{
-    width: 300px;
-    height: 200px;
-    transition: 0.5s;
-    border-radius: 10px;
-}
-
- .cards .card .face.face1{
-    position: relative;
-    background: #8d30df;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
-} 
-
-.cards .card:hover .face.face1{
-    background: #47077F;
-    transform: translateY(0);
-}
-
-
-.cards .card .face.face1 .content{
-    opacity: 0.6;
-    transition: 0.5s;
-}
-
-.cards .card:hover .face.face1 .content{
-    opacity: 1;
-}
-
-.cards .card .face.face1 .content img{
-    position: relative;
-    width: 150px;
-    max-width: 100px;
-} */
-
-/* .container .card .face.face1 .content .suporte{
-    left: 20%;
-} */
-
- .cards .card .face.face1 .content h3{
-    margin: 10px 0 0;
-    padding: 0;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    /* text-align: center; */
-    font-size: 1.5em;
-}
-
-.container .card .face.face2{
-    position: relative;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
-    transform: translateY(-100px);
-}
-
-.cards .card:hover .face.face2{
-    transform: translateY(0);
-}
-
-.cards .card .face.face2 .content p{
-    margin: 0;
-    padding: 0;
-} 
-
-
-
-/* 
-.container .card .face.face2 .content a{
-    margin: 15px 0 0;
-    display:  inline-block;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
-    padding: 5px;
-    border: 0.5px solid #000;
-    border-radius: 10px;
-} */
-
-/* .container .card .face.face2 .content a:hover{
-    background: crimson;
-    transition: 0.6s;
-    transform: scale(1.1);
-    color: #fff;
-} */
