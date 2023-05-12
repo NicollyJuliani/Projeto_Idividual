@@ -14,8 +14,10 @@ header {
     display: flex;
     margin: auto;
     padding-bottom: 10px;
-    transition: 0.6s;
+    transition: 0.6s; 
     font-size: 17px;
+    background-color: #fff;
+    width: 100%;
 
 }
 
@@ -32,7 +34,7 @@ header.sticky {
     background: #FFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 
-}
+} 
 
 
 header ul li a {

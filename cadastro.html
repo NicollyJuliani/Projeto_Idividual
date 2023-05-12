@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link class="logo_pagina" rel="icon" href="./img/astronauta_logo.png">
+    <link rel="stylesheet" href="./css/style_cadastro.css">
 </head>
+
 <body>
+
     <div class="container">
-        <div class="card">
-            <a class="login">Log in</a>
+        <div class="content">
+            <a class="login">Cadastro-se</a>
             <div class="inputBox">
+                <span class="user">NickName</span>
                 <input type="text" required="required">
-                <span class="user">Username</span>
             </div>
-
             <div class="inputBox">
-                <input type="password" required="required">
-                <span>Password</span>
+                <span class="user">Email</span>
+                <input type="email" required="required">
             </div>
-
-            <button class="enter">Enter</button>
+            <div class="inputBox">
+                <span class="user">Data de Nascimento</span>
+                <input type="date" required="required">
+            </div>
+            <div class="inputBox">
+                <span class="user">Sexo</span>
+                <select name="" id="select_sexo">
+                    <option value="Mulher">Mulher</option>
+                    <option value="Homem">Homem</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>Password</span>
+                <input type="password" required="required">
+            </div>
 
         </div>
     </div>
+
 </body>
+
 </html>

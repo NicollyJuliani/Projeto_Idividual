@@ -1,0 +1,26 @@
+* {
+    font-family: arial;
+}
+
+body {
+    /* margin: 0;
+    padding: 0; */
+    background-color: #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.content{
+    width: 600px;
+    height: 200px;
+    background-color: blueviolet;
+}
