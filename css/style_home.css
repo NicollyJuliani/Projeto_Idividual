@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     /* background-color: #ededed; */
-    background-color: #DCDCDC;
+    background-color: #fff;
 }
 
 header {
@@ -146,13 +146,13 @@ button:active {
 
 /*conteudo*/
 .conteudo {
-    height: auto;
+    /* height: auto;
     width: 95%;
-    margin-top: -1%;
+    margin-top: -1%; */
     background-color: white;
-    border-radius: 5px;
+    /* border-radius: 5px;
     margin-left: 2.5%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
 }
 
 /*conteudo*/
@@ -236,14 +236,14 @@ button:active {
 }
 
 .sessoes {
-    height: auto;
+    /* height: auto;
     width: 95%;
-    margin-top: 1.5%;
+    margin-top: 1.5%; */
     background-color: white;
     color: black;
-    border-radius: 5px;
+    /* border-radius: 5px;
     margin-left: 2.5%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .recursos {

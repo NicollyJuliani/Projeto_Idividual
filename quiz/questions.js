@@ -2,43 +2,48 @@
 
 export default [
   {
-    question: "Quanto é 1 + 2?",
+    question: "Qual é o objeto mais massivo do universo conhecido?",
     answers: [
-      { option: "3", correct: true },
-      { option: "2", correct: false },
-      { option: "4", correct: false },
+      { option: "Buraco Negro", correct: false },
+      { option: "Galáxia", correct: true },
+      { option: "Planeta Júpiter", correct: false },
+      { option: "Planeta Júpiter", correct: false },
     ],
   },
   {
-    question: "Quanto é 5 x 2?",
+    question: "Qual é a idade aproximada do universo?",
     answers: [
-      { option: "9", correct: false },
-      { option: "10", correct: true },
-      { option: "11", correct: false },
+      { option: "100 milhões de anos", correct: false },
+      { option: "4,5 bilhões de anos", correct: false },
+      { option: "13,8 bilhões de anos", correct: true },
+      { option: "13,8 bilhões de anos", correct: false },
     ],
   },
   {
-    question: "Quanto é 10 x 8?",
+    question: "Qual é a temperatura média do espaço intergaláctico?",
     answers: [
-      { option: "800", correct: false },
-      { option: "90", correct: false },
-      { option: "80", correct: true },
+      { option: "-270 graus Celsius", correct: true },
+      { option: "-100 graus Celsius", correct: false },
+      { option: " 20 graus Celsius", correct: false },
+      { option: " 20 graus Celsius", correct: false },
     ],
   },
   {
-    question: "Quanto é 7 x 7?",
+    question: "Qual é a teoria científica aceita sobre a formação do universo?",
     answers: [
-      { option: "70", correct: false },
-      { option: "56", correct: false },
-      { option: "49", correct: true },
+      { option: "Teoria do Big Bang", correct: true },
+      { option: "Teoria da Terra Plana", correct: false },
+      { option: "Teoria da Terra Oca", correct: false },
+      { option: "Teoria da Terra Oca", correct: false },
     ],
   },
   {
-    question: "q sono",
+    question: "Qual é a estrela mais próxima do nosso sistema solar?",
     answers: [
-      { option: "3", correct: true },
-      { option: "2", correct: false },
-      { option: "4", correct: false },
+      { option: "Proxima Centauri", correct: true },
+      { option: "Alpha Centauri A", correct: false },
+      { option: "Alpha Centauri B", correct: false },
+      { option: "Alpha Centauri B", correct: false },
     ],
   },
 ];

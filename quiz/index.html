@@ -1,28 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Quiz</title>
+  <link class="logo_pagina" rel="icon" href="../img/astronauta_logo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <h2>QUIZ APP</h2>
-  <main>
-    <div class="content">
-      <span class="spnQtd"></span>
-      <span class="question"></span>
-      <div class="answers"></div>
+<body>
+<div class="body_menu">
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <ion-icon name="rocket-outline"></ion-icon>
+        <div class="logo_name">SpaceQuiz</div>
+      </div>
+      <i class='bx bx-menu' id="btn"></i>
     </div>
-    <div class="finish">
-      <span></span>
-      <button>Reiniciar</button>
-    </div>
-  </main>
+    <ul class="nav_list">
+      <li>
+        <a href="">
+          <i class='bx bx-joystick'></i>
+          <span class="links_name">Quiz</span>
+        </a>
+        <span class="tooltip">Quiz</span>
+      </li>
+      <li>
+        <a href="">
+          <i class='bx bx-task'></i>
+          <span class="links_name">Resultado</span>
+        </a>
+        <span class="tooltip">Resultado</span>
+      </li>
+      <li>
+        <a href="">
+          <i class='bx bx-bar-chart-alt-2'></i>
+          <span class="links_name">Ranking</span>
+        </a>
+        <span class="tooltip">Ranking</span> 
+      </li>
+      <li>
+        <a href="../index.html">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Sair</span>
+        </a>
+        <span class="tooltip">Sair</span> 
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  let btn = document.querySelector("#btn");
+  let sidebar = document.querySelector(".sidebar");
+
+  btn.onclick = function(){
+    sidebar.classList.toggle("active");
+  }
+
+
+</script>
+
   
+
+  <!-- <div class="menu">
+
+  </div> -->
+  <div class="teste">
+    <main>
+      <!-- <h2>SPACE QUIZ </h2> -->
+      <div class="content">
+        <span class="spnQtd"></span>
+        <div class="pergunta">
+          <!-- <img src="../img/copia_1.png"> -->
+          <span class="question"></span>
+        </div>
+        <div class="answers"></div>
+      </div>
+      <div class="finish">
+        <span></span>
+        <button>Reiniciar</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- <div class="img_foguete">
+    <img src="../img/Outer space-cuate.png">
+  </div> -->
+
   <script src="script.js" type="module"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
 </body>
+
 </html>

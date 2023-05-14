@@ -6,8 +6,9 @@ body {
     margin: 0;
     padding: 0; 
     background-color: #302b63;
-  
 }
+
+/* linear-gradient(90deg, rgba(91,30,159,1) 0%, rgba(77,39,182,1) 100%); */
 
 .container{
     display: flex;
