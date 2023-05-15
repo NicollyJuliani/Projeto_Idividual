@@ -16,7 +16,7 @@ header {
     padding-bottom: 10px;
     transition: 0.6s; 
     font-size: 17px;
-    background-color: #fff;
+    background-color: transparent;
     width: 100%;
 
 }
@@ -85,7 +85,7 @@ header .container {
 
 /*Banner*/
 .banner .container {
-    height: 640px;
+    height: 650px;
     /* justify-content: center;  */
     align-items: center;
 }
@@ -149,7 +149,7 @@ button:active {
     /* height: auto;
     width: 95%;
     margin-top: -1%; */
-    background-color: white;
+    /* background-color: #fff; 
     /* border-radius: 5px;
     margin-left: 2.5%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
@@ -157,10 +157,10 @@ button:active {
 
 /*conteudo*/
 .conteudo_bigbang {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4%;
-    margin-left: -5%;
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+    height: auto;
 }
 
 .titulo_1 {
@@ -171,7 +171,7 @@ button:active {
 .img_big_bang {
     width: 350px;
     height: 200px;
-    margin-top: 50%;
+    margin-top: 20%;
     margin-left: 25%;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -180,7 +180,7 @@ button:active {
 .img_big_bang2 {
     width: 350px;
     height: 200px;
-    margin-top: 25%;
+    margin-top: 15%;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-left: 10%;
@@ -202,18 +202,128 @@ button:active {
     margin-left: 5%;
     border-radius: 5px;
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 
+/*planetas*/
+.body_planet{
+    min-height: 100vh;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #EFEFEF;
 
+}
+
+.slide-container{
+    max-width: 1120px;
+    width: 100%;
+    background-color: grey;
+    padding: 40px 0;
+}
+
+.slide-contente{
+    margin: 0 40px;
+}
+.card{
+    width: 320px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.image-content, .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content{
+    position: relative;
+    row-gap: 5px;
+    padding: 15px 0;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#47077F ;
+    border-radius: 25px 25px 0 15px ;
+}
+
+.overlay::before, .overlay::after{
+    content: ' ';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #47077F;
+}
+
+.overlay::after{
+    border-radius: 0 25px 0 0 ;
+    background-color: #FFFF;
+}
+
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #FFFF;
+    padding: 3px;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #47077F;
+}
+
+.name{
+   font-size: 18px; 
+   font-weight: 500;
+   color: #333;
+
+}
+
+.description{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+
+.button{
+    border:none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #47077F;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover{
+    background: #7b2ac1;
+}
 
 
 /*cards dos planetas*/
+/* 
 .organizador {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-color:  #ededed;
 }
 
 .titulo_2 {
@@ -229,22 +339,23 @@ button:active {
     display: flex;
     border-radius: 5px;
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     /* margin-left: -5%; */
-    width: 90%;
+    /* width: 90%;
     margin-left: 5%;
-}
+  
+} */
 
-.sessoes {
+/* .sessoes { */
     /* height: auto;
     width: 95%;
     margin-top: 1.5%; */
-    background-color: white;
-    color: black;
+    /* background-color:  #ededed;
+    color: black; */
     /* border-radius: 5px;
     margin-left: 2.5%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
-}
+/* }
 
 .recursos {
     flex-direction: row;
@@ -324,17 +435,18 @@ h3 {
 .cards .card .face.face2 .content p {
     margin: 0;
     padding: 0;
-}
+} */ 
 
 /*viagem espacial*/
 .viagem {
     height: auto;
-    width: 90%;
+    width: 100%;
     margin-top: 2%;
-    background-color: white;
-    border-radius: 5px;
+    background-color: linear-gradient(90deg, rgba(91,30,159,1) 0%, rgba(77,39,182,1) 100%);
+    
+    /* border-radius: 5px;
     margin-left: 5%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .conteudo_viagem {
@@ -345,16 +457,20 @@ h3 {
     margin-left: -5%;
 }
 
-video {
-    width: 10%;
+.img_rocket img{
+    width: 400px;
+    margin-top: 5%;
+}
+
+.informação{
+    margin-left: 10%;
 }
 
 .titulo_3 {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2.4rem;
-    width: 900px;
-    margin-top: -5%;
-    margin-left: 10%;
+    font-size: 2.5rem;
+    width: 100%;
+    
 }
 
 .divisao {
@@ -364,39 +480,12 @@ video {
 
 .paragrafo_3 {
     display: flex;
-    border-radius: 5px;
     line-height: 1.6;
-    font-size: 1.1rem;
-    width: 98%;
+    font-size: 1.2rem;
+    width: 600px;
     justify-content: center;
     align-items: center;
     margin-left: 3%;
-}
-
-
-.paragrafo_4 {
-    display: flex;
-    border-radius: 5px;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 0%;
-}
-
-.img_sputnik {
-    width: 350px;
-    height: 250px;
-    margin-top: 7%;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.sputnik {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 /*footer*/

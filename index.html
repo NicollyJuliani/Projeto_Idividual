@@ -9,6 +9,8 @@
   <link class="logo_pagina" rel="icon" href="./img/astronauta_logo.png">
   <link rel="stylesheet" href="./css/style_home.css">
   <link rel="stylesheet" href="./css/style_menu.css">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="./img/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -72,12 +74,7 @@
           partículas
           subatômicas como prótons, nêutrons e elétrons. À medida que o universo se expandiu e esfriou, essas partículas
           começaram a se juntar para formar átomos, que são os blocos de construção básicos da matéria.
-          <br><br>
-          &nbsp;&nbsp; Com o tempo, esses átomos se juntaram para formar as primeiras estrelas e galáxias, e o universo
-          começou a
-          evoluir para a forma como o conhecemos hoje. As observações astronômicas atuais fornecem fortes evidências
-          para a Teoria do Big Bang, como a radiação cósmica de fundo em micro-ondas, que é uma "fóssil" da radiação do
-          Big Bang e é observada em todo o universo
+
         </p>
       </div>
       <div>
@@ -87,8 +84,38 @@
     </div>
   </div>
 
-   <!-- conteudo 2 -->
-  <div class="sessoes">
+  <div class="body_planet">
+
+    <div class="slide-container swiper">
+      <div class="slide-contente">
+        <div class="card-wrapper slide-wrapper">
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="./img/mercurio.png" alt="" class="card-img">
+                </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Mercurio</h2>
+              <p class="description">É o planeta mais próximo do Sol e é o menor planeta do Sistema Solar. Ele
+                orbita o Sol em
+                cerca de 88
+                dias e não tem atmosfera significativa.</p>
+
+                <button class="button" >Viem More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- conteudo 2 -->
+  <!-- <div class="sessoes">
     <div class="organizador">
       <h1 class="titulo_2" style="color: #47077F;">Como é nosso sistema solar?</h1>
       <p class="paragrafo_2">
@@ -224,8 +251,8 @@
 
             </div>
           </div>
-        </div>
-        <!-- <div class="card">
+        </div> -->
+  <!-- <div class="card">
       <div class="face face1">
           <div class="content">
               <img class="suporte" src="./img/jupiter.png">
@@ -241,7 +268,7 @@
           </div>
       </div>
   </div> -->
-        <div class="card">
+  <!-- <div class="card">
           <div class="face face1">
             <div class="content">
               <img src="./img/8.png">
@@ -258,7 +285,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
 
 
   <!-- conteudo 2 -->
@@ -359,6 +387,34 @@
     </div>
   </div> -->
 
+  <div class="viagem">
+    <div class="container">
+      <div class="content_viagem">
+        <h1 class="titulo_3" style="color: #47077F;">Você sabe o que é exploração espacial?</h1>
+        <div class="divisao">
+          <div class="img_rocket">
+            <img src="./img/Starting a business project-amico (3).png">
+          </div>
+          <div class="informação">
+            <p class="paragrafo_3">&nbsp;&nbsp;A exploração espacial é a atividade humana de enviar naves espaciais,
+              satélites e astronautas ao espaço para estudar, entender e explorar o universo além da Terra. A exploração
+              espacial tem sido um dos maiores empreendimentos científicos da humanidade e tem sido conduzida por
+              governos e
+              agências espaciais em todo o mundo. <br><br>
+              &nbsp;&nbsp;Hoje, as viagens espaciais estão cada vez mais avançadas. A Estação Espacial Internacional
+              orbita a Terra
+              continuamente, permitindo que astronautas de todo o mundo trabalhem juntos em experimentos científicos e
+              em pesquisas espaciais. As agências espaciais também estão planejando missões para enviar seres humanos
+              para Marte e explorar ainda mais profundamente o espaço.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <!-- conteudo 3 -->
   <!-- <div class="viagem">
     <div class="container">
@@ -416,5 +472,9 @@
   </div>
 
 </body>
+
+  <!-- swiper js -->
+  <script src="./js/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
 
 </html>
