@@ -1,10 +1,17 @@
-var swiper = new Swiper(".slide-contente", {
-    slidesPerView: 4,
-    centeredSlides: true,
+var swiper = new Swiper(".slide-content", {
+    slidesPerView: 3,
     spaceBetween: 30,
-    grabCursor: true,
+    slidesPerGroup:3,
+    loop: true,
+    loopFillGroupdWithBlank: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
+    navigation: {
+      nexEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
+
+  
