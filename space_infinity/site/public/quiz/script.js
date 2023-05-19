@@ -13,6 +13,7 @@ import questions from "./questions.js";
 // declarando duas variaveis, para armazenar o index da questão atual e a outra a quantidade de acertos
 let currentIndex = 0;
 let questionsCorrect = 0;
+var pontos = 0;
 
 // botão para reiniciar 
 btnRestart.onclick = () => {
@@ -21,6 +22,7 @@ btnRestart.onclick = () => {
 
   currentIndex = 0;
   questionsCorrect = 0;
+  pontos = 0;
   loadQuestion();
 };
 
@@ -28,6 +30,7 @@ btnRestart.onclick = () => {
 function nextQuestion(e) {
   if (e.target.getAttribute("data-correct") === "true") {
     questionsCorrect++;
+    pontos += 10;
   }
 // verifica se não é a ulta questão e se não for vai aumentar mais uma ou finalizar
   if (currentIndex < questions.length - 1) {
@@ -39,7 +42,16 @@ function nextQuestion(e) {
 }
 // funcão para finalizar mostrando os pontos e as questões
 function finish() {
-  textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
+  textFinish.innerHTML = "";
+  if(questionsCorrect >= 0 && questionsCorrect <= 2 ){
+    textFinish.innerHTML += `Não foi dessa vez &#128557 <br>`;
+  }else if(questionsCorrect <= 4){
+    textFinish.innerHTML += `Está quase lá &#128579 <br>`;
+  }else{
+    textFinish.innerHTML += `Você arrasou &#128512 <br> `
+  }
+  textFinish.innerHTML += `você acertou ${questionsCorrect} de ${questions.length} <br>
+  Sua pontuação foi ${pontos} pontos`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
 }

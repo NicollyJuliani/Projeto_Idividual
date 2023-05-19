@@ -1,0 +1,9 @@
+.desempenho{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    width: 400px;
+    background-color: aqua;
+}

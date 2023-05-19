@@ -16,7 +16,7 @@ body {
   background-image: url('../img/estelas.png');
   background-size: 600px;
 }
-
+/* css menu */
 .body_menu{
   position: relative;
   min-height: 100vh;
@@ -158,33 +158,6 @@ body {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .menu {
   width: 40px;
   height: 100%;
@@ -323,9 +296,13 @@ button:active {
   flex-direction: column;
   gap: 10px;
   color: #fff;
+  margin-top: 30%;
+  font-size: 1.5rem;
+  line-height: 2;
 }
 
 .finish button {
   text-align: center;
   color: #fff;
+
 }

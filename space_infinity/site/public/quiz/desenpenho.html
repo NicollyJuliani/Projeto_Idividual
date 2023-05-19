@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Quiz || Desenpenho </title>
+
+    <link class="logo_pagina" rel="icon" href="../assets/img/astronauta_logo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_desenpenho.css">
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <div class="body_menu">
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <ion-icon name="rocket-outline"></ion-icon>
+                    <div class="logo_name">SpaceQuiz</div>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav_list">
+                <li>
+                    <a href="">
+                        <i class='bx bx-joystick'></i>
+                        <span class="links_name">Quiz</span>
+                    </a>
+                    <span class="tooltip">Quiz</span>
+                </li>
+                <li>
+                    <a href="./index.html">
+                        <i class='bx bx-task'></i>
+                        <span class="links_name">Desempenho</span>
+                    </a>
+                    <span class="tooltip">Desempenho</span>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bx-bar-chart-alt-2'></i>
+                        <span class="links_name">Ranking</span>
+                    </a>
+                    <span class="tooltip">Ranking</span>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Sair</span>
+                    </a>
+                    <span class="tooltip">Sair</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+
+        btn.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+    <!-- Desempenho -->
+    <div class="conteudo">
+        <div class="conteiner">
+            <div class="desempenho">
+                <div class="logo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
