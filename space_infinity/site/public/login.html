@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Space Infinity | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="stylesheet" href="./css/style_login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Header-->
+    <div class="container">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+            <div class="content">
+                <div class="imagem">
+                    <div class="frase">
+                        <h1>&nbsp;Faça login para atualizar seus conhecimentos
+                            sobre o universo
+                        </h1>
+                    </div>
+                    <div class="logo">
+                        <img src="./assets/imgs/astronauta.png">
+                    </div>
+                </div>
+                <div class="login-box">
+                    <p>Login</p>
+                    <div class="divisao">
+                        <div class="user-box">
+                            <input id="email_input" type="text" placeholder="Login">
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                            <input id="senha_input" type="text" placeholder="******">
+                            <label>Senha</label>
+                        </div>
+
+                        <button class="botao" onclick="entrar()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path fill="currentColor"
+                                    d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
+                                </path>
+                            </svg>
+                            <span>Login</span>
+                        </button>
+
+                        <p class="cadastrar">Não tem uma conta?<a href="./cadastro.html" class="a2"> Cadastre-se</a></p>
+                    </div>
+
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" id="loading-gif">
+                    </div>
+
+                    <div id="div_erros_login"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card card-login">
+                <h2>Olá de volta!</h2>
+                <div class="formulario">
+                    <div class="campo">
+                        <span>E-mail:</span>
+                        <input id="email_input" type="text" placeholder="Login">
+                    </div>
+                    <div class="campo">
+                        <span>Senha:</span>
+                        <input id="senha_input" type="text" placeholder="******">
+                    </div>
+                    <button class="botao" onclick="entrar()">Entrar</button>
+                </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div> -->
+
+        <!--footer inicio-->
+        <!-- <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+            <span class="version">v1.0.0</span>
+        </div>
+    </div> -->
+        <!--footer fim-->
+
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+
+        if (emailVar.indexOf("@") == -1 && emailVar.indexOf(".") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "O email deve conter @ e .";
+
+            finalizarAguardar();
+            return false;
+        }
+        // else if(senhaVar != senhaVar ){
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "Confime a senha";
+
+        //     finalizarAguardar();
+        //     return false;
+        // } else if (emailVar == "" || senhaVar == "") {
+        //     cardErro.style.display = "block"
+        //     mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        //     finalizarAguardar();
+        //     return false;
+        // }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.CPF_USUARIO = json.cpf;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/quiz/index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
