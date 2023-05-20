@@ -44,11 +44,7 @@ header ul li a {
 
 
 /*container*/
-.container {
-    display: flex;
-    width: 80%;
-    margin: auto;
-}
+
 
 /*banner fundo*/
 .img_fundo {

@@ -1,9 +1,52 @@
-.desempenho{
+/* .container{
     display: flex;
-    flex-direction: row;
+    width: 80%;
+    margin: auto;
+} */
+
+
+.conteudo{
+    width: 400px;
+    height: 200px; 
 }
 
-.logo{
-    width: 400px;
-    background-color: aqua;
+
+.usuario{
+    display: flex;
+    flex-direction: row;
+    /* width: auto;
+    height: auto;  */
+}
+
+
+.avatar{
+    width: 150px;
+    height: 100px;
+    background-color:  #950000; 
+    border-radius: 30px;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* margin-right: 50%; */
+    margin-left: 35%;
+}
+.frase{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.frase p{
+    font-size: 1.5rem;
+}
+
+
+/*Gráfico*/
+.grafico-chart{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chart{
+    margin-top: 25%;
+    margin-left: 100px; 
+
 }

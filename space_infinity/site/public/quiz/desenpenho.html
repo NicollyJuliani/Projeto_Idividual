@@ -11,74 +11,157 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_desenpenho.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
     <!-- Menu -->
-    <div class="body_menu">
-        <div class="sidebar">
-            <div class="logo_content">
-                <div class="logo">
-                    <ion-icon name="rocket-outline"></ion-icon>
-                    <div class="logo_name">SpaceQuiz</div>
+    <div class="container">
+        <div class="body_menu">
+            <div class="sidebar">
+                <div class="logo_content">
+                    <div class="logo">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                        <div class="logo_name">SpaceQuiz</div>
+                    </div>
+                    <i class='bx bx-menu' id="btn"></i>
                 </div>
-                <i class='bx bx-menu' id="btn"></i>
+                <ul class="nav_list">
+                    <li>
+                        <a href="">
+                            <i class='bx bx-joystick'></i>
+                            <span class="links_name">Quiz</span>
+                        </a>
+                        <span class="tooltip">Quiz</span>
+                    </li>
+                    <li>
+                        <a href="./index.html">
+                            <i class='bx bx-task'></i>
+                            <span class="links_name">Desempenho</span>
+                        </a>
+                        <span class="tooltip">Desempenho</span>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-bar-chart-alt-2'></i>
+                            <span class="links_name">Ranking</span>
+                        </a>
+                        <span class="tooltip">Ranking</span>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <i class='bx bx-log-out'></i>
+                            <span class="links_name">Sair</span>
+                        </a>
+                        <span class="tooltip">Sair</span>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav_list">
-                <li>
-                    <a href="">
-                        <i class='bx bx-joystick'></i>
-                        <span class="links_name">Quiz</span>
-                    </a>
-                    <span class="tooltip">Quiz</span>
-                </li>
-                <li>
-                    <a href="./index.html">
-                        <i class='bx bx-task'></i>
-                        <span class="links_name">Desempenho</span>
-                    </a>
-                    <span class="tooltip">Desempenho</span>
-                </li>
-                <li>
-                    <a href="">
-                        <i class='bx bx-bar-chart-alt-2'></i>
-                        <span class="links_name">Ranking</span>
-                    </a>
-                    <span class="tooltip">Ranking</span>
-                </li>
-                <li>
-                    <a href="../index.html">
-                        <i class='bx bx-log-out'></i>
-                        <span class="links_name">Sair</span>
-                    </a>
-                    <span class="tooltip">Sair</span>
-                </li>
-            </ul>
         </div>
     </div>
 
 
-    <script>
-        let btn = document.querySelector("#btn");
-        let sidebar = document.querySelector(".sidebar");
-
-        btn.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
-    </script>
 
     <!-- Desempenho -->
+
     <div class="conteudo">
         <div class="conteiner">
             <div class="desempenho">
-                <div class="logo">
-
+                <div class="usuario">
+                    <div class="avatar">
+                        
+                    </div>
+                    <div class="frase">
+                        <p>Nicolly</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="grafico">
+        <div class="conteiner">
+            <div class="grafico-chart">
+                <div>
+                    <canvas id="myChart"  class="chart" style="position: relative; height:60vh; width:60vw"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
 </body>
 
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+</script>
+
+
+<script src="script.js" type="module"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </html>
+<script>
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+
+        {
+            label: 'umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [30 + 50, 29 + 53, 28 + 52, 25 + 60, 22 + 58, 23 + 60],
+        }
+
+        ]
+
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+</script>

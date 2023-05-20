@@ -13,9 +13,10 @@ body {
   flex-direction: row;
   gap: 5px;
   background-color: #302b63;
-  background-image: url('../img/estelas.png');
+  background-image: url('../assets/img/estelas.png');
   background-size: 600px;
 }
+
 /* css menu */
 .body_menu{
   position: relative;
