@@ -8,11 +8,12 @@
 
     <link class="logo_pagina" rel="icon" href="../assets/img/astronauta_logo.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <link rel="styleshee" href="./style_ranking.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style_ranking.css">
 </head>
-<body>
-    
+<body class="body_tudo">
+
+    <div class="stars"></div>
     <!-- Menu -->
     <div class="container">
         <div class="body_menu">
@@ -58,21 +59,87 @@
         </div>
     </div>
 
-    <div class="">
-        <div>
-            <div>
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+    
+        btn.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+    </script>
 
-            </div>
-        </div>
+    <!-- conteudo -->
+<div class="ranking-tudo">
+  <div class="ranking-container">
+    
+    <div class="ranking-top">
+      <h2>Top 3</h2>
+      <div id="topThreeList" class="ranking-list"></div>
     </div>
+    
+    <div class="ranking-card">
+      <h2>Outros Colocados</h2>
+      <div id="otherPlayersList" class="ranking-list"></div>
+    </div>
+
+  </div>
+</div>
+
+
 </body>
 </html>
-
 <script>
-    let btn = document.querySelector("#btn");
-    let sidebar = document.querySelector(".sidebar");
+    const topThreeList = document.getElementById('topThreeList');
+const otherPlayersList = document.getElementById('otherPlayersList');
 
-    btn.onclick = function () {
-        sidebar.classList.toggle("active");
-    }
-</script>
+// Dados dos usuários (exemplo)
+const usersData = [
+  { name: 'Usuário 1', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 1000 },
+  { name: 'Usuário 2', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 900 },
+  { name: 'Usuário 3', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 800 },
+  { name: 'Usuário 4', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 700 },
+  { name: 'Usuário 5', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 600 },
+  { name: 'Usuário 6', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 500 },
+  { name: 'Usuário 7', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 400 },
+  { name: 'Usuário 8', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 300 },
+];
+
+// Ordena os usuários por pontos (maior para menor)
+const sortedUsers = usersData.sort((a, b) => b.points - a.points);
+
+// Popula os cards do Top 3
+for (var i = 0; i < 3; i++) {
+  const user = sortedUsers[i];
+  const card = createRankingCard(user);
+  topThreeList.appendChild(card);
+}
+
+// Popula os outros colocados
+for (var i = 3; i < sortedUsers.length; i++) {
+  const user = sortedUsers[i];
+  const card = createRankingCard(user);
+  otherPlayersList.appendChild(card);
+}
+
+function createRankingCard(user) {
+  const card = document.createElement('div');
+  card.className = 'ranking-item';
+
+  const img = document.createElement('img');
+  img.src = user.photo;
+  img.alt = user.name;
+
+  const name = document.createElement('h3');
+  name.textContent = user.name;
+
+  const points = document.createElement('p');
+  points.textContent = `${user.points} pontos`;
+
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(points);
+
+  return card;
+}
+
+ </script>
