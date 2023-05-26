@@ -1,7 +1,6 @@
 CREATE DATABASE Projeto_individual;
 USE  Projeto_individual;
 
-
 CREATE TABLE usuario(
 idUsuario INT PRIMARY KEY auto_increment,
 nickname VARCHAR(45),
@@ -15,7 +14,6 @@ SELECT * FROM usuario;
 INSERT INTO usuario VALUES	
 (NULL, 	'melissa', 'melissa@gmail.com', null, '12345');
 
-
 DELETE FROM usuario WHERE idUsuario = 2;
 
 CREATE TABLE jogo(
@@ -27,7 +25,6 @@ pontuacaoMax INT
 INSERT INTO jogo VALUES 
 (null, "Quiz", "100"),
 (null, "Quiz 2", "100");
-
 
 CREATE TABLE pontosUsuario(
 idPontos INT PRIMARY KEY auto_increment,

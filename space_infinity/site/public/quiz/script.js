@@ -32,7 +32,7 @@ function nextQuestion(e) {
     questionsCorrect++;
     pontos += 10;
   }
-// verifica se não é a ulta questão e se não for vai aumentar mais uma ou finalizar
+  // verifica se não é a ulta questão e se não for vai aumentar mais uma ou finalizar
   if (currentIndex < questions.length - 1) {
     currentIndex++;
     loadQuestion();
@@ -43,17 +43,34 @@ function nextQuestion(e) {
 // funcão para finalizar mostrando os pontos e as questões
 function finish() {
   textFinish.innerHTML = "";
-  if(questionsCorrect >= 0 && questionsCorrect <= 2 ){
+  if (questionsCorrect >= 0 && questionsCorrect <= 2) {
     textFinish.innerHTML += `Não foi dessa vez &#128557 <br>`;
-  }else if(questionsCorrect <= 4){
+  } else if (questionsCorrect <= 4) {
     textFinish.innerHTML += `Está quase lá &#128579 <br>`;
-  }else{
+  } else {
     textFinish.innerHTML += `Você arrasou &#128512 <br> `
   }
   textFinish.innerHTML += `você acertou ${questionsCorrect} de ${questions.length} <br>
   Sua pontuação foi ${pontos} pontos`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
+
+
+  fetch("/usuarios/pontos_finais", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      pontoServer: pontos,
+    })
+  }).then(function (resposta) {
+    console.log("resposta", resposta);
+  }).catch(function (resposta) {
+    console.log(`#ERRO, ${resposta}`);
+  });
+
+  return false;
 }
 
 
@@ -66,7 +83,7 @@ function loadQuestion() {
 
   item.answers.forEach((answer) => {
     const div = document.createElement("div");
-//pega a resposta correta
+    //pega a resposta correta
     div.innerHTML = `
     <button class="answer" data-correct="${answer.correct}">
       ${answer.option}
@@ -75,7 +92,7 @@ function loadQuestion() {
 
     answers.appendChild(div);
   });
-// atribui para que se estiver uma resposta correta para para proxima pergunta
+  // atribui para que se estiver uma resposta correta para para proxima pergunta
   document.querySelectorAll(".answer").forEach((item) => {
     item.addEventListener("click", nextQuestion);
   });

@@ -98,9 +98,35 @@ function cadastrar(req, res) {
     }
 }
 
+function pontos_finais(req, res){
+    var pontosFinais = req.body.pontoServer;
+
+    if(pontosFinais == undefined){
+        res.status(400).send("Seus pontos estão indefinidos")
+    }else{
+        usuarioModel.pontos_finais(pontosFinais)
+        .then(
+            function (resultado){
+                res.json(resultado);
+            }
+            ).cacth(
+                function (erro){
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um problema ao cadastrar os pontos! erros: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+        }
+    }
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    pontos_finais
 }

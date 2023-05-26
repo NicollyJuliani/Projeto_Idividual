@@ -20,4 +20,10 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/pontos_finais", function (req, res) {
+    usuarioController.pontos_finais(req, res);
+});
+
+
+
 module.exports = router;

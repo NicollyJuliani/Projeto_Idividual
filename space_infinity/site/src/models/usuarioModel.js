@@ -31,8 +31,17 @@ function cadastrar(nickname, email, dtNasc, senha) {
     return database.executar(instrucao);
 }
 
+// tabela pontos
+function pontos_finais(pontosFinais){
+    var instrucao = `
+    INSERT INTO pontosUsuario (pontuacao) VALUES ('${pontosFinais}')`
+    
+    return database.executar(instrucao)
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    pontos_finais
 };
