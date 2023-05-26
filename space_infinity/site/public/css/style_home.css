@@ -61,7 +61,7 @@ header .container {
 
 .navbar {
     display: flex;
-    width: 600px;
+    width: 750px;
     align-items: center;
     list-style: none;
     justify-content: space-between;
