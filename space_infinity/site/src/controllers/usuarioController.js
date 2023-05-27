@@ -100,11 +100,12 @@ function cadastrar(req, res) {
 
 function pontos_finais(req, res){
     var pontosFinais = req.body.pontoServer;
+    var fkUsuario = req.body.idServer;
 
     if(pontosFinais == undefined){
         res.status(400).send("Seus pontos estão indefinidos")
     }else{
-        usuarioModel.pontos_finais(pontosFinais)
+        usuarioModel.pontos_finais(fkUsuario, pontosFinais)
         .then(
             function (resultado){
                 res.json(resultado);
