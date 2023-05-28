@@ -98,7 +98,7 @@
 
 </html>
 <script>
-    
+
     validarSessao();
     visualizarRankig();
    
@@ -121,15 +121,16 @@
                 for (var i = 0; i < 3; i++) {
                     var user = resposta[i];
 
-                    topThreeList.innerHTML += `<h3>${user.nickname}</h3> <br>
-                    <p> ${user.pontos} </p>`
+                    topThreeList.innerHTML += `${i + 1}º lugar <div class="ranking-item"> <h3>${user.nickname}</h3> 
+                    <p> ${user.pontos} </p> </div> `
+    
                 }
 
-                for (var i = 2; i < resposta.length; i++) {
+                for (var i = 3; i < resposta.length; i++) {
                     var user = resposta[i];
 
-                    otherPlayersList.innerHTML += `<h3>${user.nickname}</h3> <br>
-                    <p> ${user.pontos} </p>`
+                    otherPlayersList.innerHTML += `${i + 1}º lugar <div class="ranking-item"> <h3>${user.nickname}</h3> 
+                    <p> ${user.pontos} </p> </div> <br> `
                 }
 
             });
