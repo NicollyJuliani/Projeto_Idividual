@@ -13,28 +13,26 @@
   <link class="logo_pagina" rel="icon" href="./assets/img/astronauta_logo.png">
   <link rel="stylesheet" href="./css/style_home.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
 </head>
 
 <body>
-
 
   <div class="img_fundo">
     <!-- menu -->
     <header>
       <div class="container">
         <ul class="navbar">
-          <li>Inicio</li>
-          <li><a href="#bigbang">BigBang</a></li>
-          <li><a>Planetas</a></li>
-          <li><a>Exploração espacial</a></li>
-          <li><a href="recomendacoes.html">Recomendações</a></li>
-          <li>|</li>
-          </li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
+          <span class="pt1">
+          <p class="logotipo">SPACE INFINITY 
+            <ion-icon name="rocket-outline"></ion-icon> </p>
+          </span>
+          <span class="pt2">
+            <a> Inicio</a>
+            <a href="./recomendacoes.html"> Recomendações </a>
+          <li><b>|</b></li>
+          <a href="./login.html"> Login </a>
+          <a href="./cadastro.html"> Cadastro </a>
+        </span>
         </ul>
       </div>
     </header>
@@ -43,10 +41,9 @@
       window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
         header.classList.toggle("sticky", window.scrollY > 0);
-      })
+      });
     </script>
-
-
+    
     <!-- banner -->
     <div class="banner">
       <div class="container">
@@ -58,6 +55,7 @@
             &nbsp;&nbsp; O <b style="color:#47077F;">universo</b> está além <br>
             &nbsp;&nbsp; da nossa <b style="color:#47077F;">imaginação</b>
           </p>
+          
           <button id="btn_saiba_mais">saiba mais</button>
         </div>
       </div>
@@ -82,7 +80,6 @@
           partículas
           subatômicas como prótons, nêutrons e elétrons. À medida que o universo se expandiu e esfriou, essas partículas
           começaram a se juntar para formar átomos, que são os blocos de construção básicos da matéria.
-
         </p>
       </div>
       <div>
@@ -196,7 +193,6 @@
   </div>
 
 
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var carousel = document.querySelector(".carousel");
@@ -225,400 +221,77 @@
     });
   </script>
 
-
-
-  <!-- <div class="body_planet">
-
-    <div class="slide-container swiper">
-      <div class="slide-content">
-        <div class="card-wrapper slide-wrapper">
-          <div class="card swiper-slide">
-            <div class="image-content">
-              <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="./assets/img/mercurio.png" alt="" class="card-img">
-                </div>
-            </div>
-
-            <div class="card-content">
-              <h2 class="name">Mercurio</h2>
-              <p class="description">É o planeta mais próximo do Sol e é o menor planeta do Sistema Solar. Ele
-                orbita o Sol em
-                cerca de 88
-                dias e não tem atmosfera significativa.</p>
-
-                <button class="button" >Viem More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>  -->
-
-  <!-- conteudo 2 -->
-  <!-- <div class="sessoes">
-    <div class="organizador">
-      <h1 class="titulo_2" style="color: #47077F;">Como é nosso sistema solar?</h1>
-      <p class="paragrafo_2">
-        &nbsp;&nbsp; O Sistema Solar é um sistema planetário que inclui uma estrela central, o Sol, e todos os
-        objetos celestes que orbitam em torno dele. Além dos planetas, o Sistema Solar também inclui asteroides,
-        cometas,
-        meteoroides e outros objetos.
-        Existem oito planetas no Sistema Solar: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno. Aqui
-        estão algumas informações sobre cada um desses planetas:
-      </p>
-    </div>
-    <div class="cards">
-      <div class="container">
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img class="suporte" src="./img/mercurio.png">
-              <h3>Mercurio</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p> &nbsp;&nbsp;É o planeta mais próximo do Sol e é o menor planeta do Sistema Solar. Ele
-                orbita o Sol em
-                cerca de 88
-                dias e não tem atmosfera significativa.</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img src="./img/venus.png">
-              <h3>Vênus</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o segundo planeta do Sistema Solar e é frequentemente chamado de
-                "planeta irmão" da Terra
-                por causa de seu tamanho semelhante. Vênus tem uma atmosfera densa que torna sua superfície extremamente
-                quente.</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img class="suporte" src="./img/terra.png">
-              <h3>Terra</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o terceiro planeta do Sistema Solar e é o único planeta conhecido a
-                abrigar vida. Ele tem uma atmosfera
-                que protege a vida na superfície do planeta dos raios nocivos do Sol.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cards">
-      <div class="container">
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img class="suporte" src="./img/marte.png">
-              <h3>Marte</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o quarto planeta do Sistema Solar e é frequentemente chamado de
-                "planeta
-                vermelho" por causa da cor de sua superfície. Marte tem uma atmosfera fina e seca e já foi considerado
-                um
-                candidato para a vida extraterrestre.</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img class="suporte" src="./img/jupiter.png">
-              <h3>Jupiter</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o maior planeta do Sistema Solar e tem mais massa do que todos os
-                outros planetas juntos. Ele tem uma atmosfera gasosa que forma faixas coloridas ao seu redor, e é
-                cercado por dezenas de luas</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img src="./img/7.png">
-              <h3>Saturno</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o segundo maior planeta do Sistema Solar e é conhecido por seus anéis
-                espetaculares. Saturno tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="cards">
-      <div class="container">
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img class="suporte" src="./img/terra.png">
-              <h3>Urano</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o sétimo planeta do Sistema Solar e é o primeiro dos planetas gigantes
-                de gelo. Urano tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-
-            </div>
-          </div>
-        </div> 
-
-        </div> -->
-
-
-  <!-- <div class="card">
-      <div class="face face1">
-          <div class="content">
-              <img class="suporte" src="./img/jupiter.png">
-              <h3>Jupiter</h3>
-          </div>
-      </div>
-      <div class="face face2">
-          <div class="content">
-              <p>&nbsp;&nbsp;É o maior planeta do Sistema Solar e tem mais massa do que todos os
-                outros planetas juntos. Ele tem uma atmosfera gasosa que forma faixas coloridas ao seu redor, e é
-                cercado por dezenas de luas</p>
-              
-          </div>
-      </div>
-  </div> -->
-  <!-- <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img src="./img/8.png">
-              <h3>Netuno</h3>
-            </div>
-          </div>
-          <div class="face face2">
-            <div class="content">
-              <p>&nbsp;&nbsp;É o oitavo e último planeta do Sistema Solar e também é um gigante de
-                gelo. Netuno tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> 
-
-
-
-   conteudo 2 -->
-  <!-- <div class="planetas">
-    <div class="container">
-      <div class="organizar">
-        <h1 class="titulo_2" style="color: #47077F;">Como é nosso sistema solar?</h1>
-        <p class="paragrafo_2">
-          &nbsp;&nbsp; O Sistema Solar é um sistema planetário que inclui uma estrela central, o Sol, e todos os
-          objetos celestes que orbitam em torno dele. Além dos planetas, o Sistema Solar também inclui asteroides,
-          cometas,
-          meteoroides e outros objetos.
-          Existem oito planetas no Sistema Solar: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno. Aqui
-          estão algumas informações sobre cada um desses planetas:
-        </p>
-        <div class="boxes">
-          <div class="box">
-            <img src="./img/mercurio.png" alt="">
-            <div class="informações_planetas">
-              <h4>Mercúrio</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o planeta mais próximo do Sol e é o menor planeta do Sistema Solar. Ele
-                orbita o Sol em
-                cerca de 88
-                dias e não tem atmosfera significativa.</p>
-            </div>
-          </div>
-          <div class="box">
-            <img src="./img/venus.png" alt="">
-            <div class="informações_planetas">
-              <h4>Vênus</h4>
-              <p class="paragrafo"> &nbsp;&nbsp;É o segundo planeta do Sistema Solar e é frequentemente chamado de
-                "planeta irmão" da Terra
-                por causa de seu tamanho semelhante. Vênus tem uma atmosfera densa que torna sua superfície extremamente
-                quente.</p>
-            </div>
-          </div>
-        </div>
-        <div class="boxes">
-          <div class="box">
-            <img src="./img/terra.png" alt="">
-            <div class="informações_planetas">
-              <h4>Terra</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o terceiro planeta do Sistema Solar e é o único planeta conhecido a
-                abrigar vida. Ele tem uma atmosfera
-                que protege a vida na superfície do planeta dos raios nocivos do Sol.</p>
-            </div>
-          </div>
-          <div class="box">
-            <img src="./img/marte.png" alt="">
-            <div class="informações_planetas">
-              <h4>Marte</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o quarto planeta do Sistema Solar e é frequentemente chamado de
-                "planeta
-                vermelho" por causa da cor de sua superfície. Marte tem uma atmosfera fina e seca e já foi considerado
-                um
-                candidato para a vida extraterrestre</p>
-            </div>
-          </div>
-        </div>
-        <div class="boxes">
-          <div class="box">
-            <img src="./img/jupiter.png" alt="">
-            <div class="informações_planetas">
-              <h4>Jupiter</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o maior planeta do Sistema Solar e tem mais massa do que todos os
-                outros planetas juntos. Ele tem uma atmosfera gasosa que forma faixas coloridas ao seu redor, e é
-                cercado por dezenas de luas</p>
-            </div>
-          </div>
-          <div class="box">
-            <img src="./img/7.png" alt="">
-            <div class="informações_planetas">
-              <h4>Saturno</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o segundo maior planeta do Sistema Solar e é conhecido por seus anéis
-                espetaculares. Saturno tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-            </div>
-          </div>
-        </div>
-        <div class="boxes">
-          <div class="box">
-            <img src="./img/urano.png" alt="">
-            <div class="informações_planetas">
-              <h4>Urano</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o sétimo planeta do Sistema Solar e é o primeiro dos planetas gigantes
-                de gelo. Urano tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-            </div>
-          </div>
-          <div class="box">
-            <img src="./img/8.png" alt="">
-            <div class="informações_planetas">
-              <h4>Netuno</h4>
-              <p class="paragrafo">&nbsp;&nbsp;É o oitavo e último planeta do Sistema Solar e também é um gigante de
-                gelo. Netuno tem uma atmosfera gasosa e é cercado por dezenas de luas.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="viagem">
     <div class="container">
       <div class="content_viagem">
         <h1 class="titulo_3" style="color: #47077F;">Você sabe o que é exploração espacial?</h1>
         <div class="divisao">
-          <div class="img_rocket">
-            <img src="./assets/img//Starting a business project-amico (3).png">
-          </div>
-          <div class="informação">
-            <p class="paragrafo_3">&nbsp;&nbsp;A exploração espacial é a atividade humana de enviar naves espaciais,
-              satélites e astronautas ao espaço para estudar, entender e explorar o universo além da Terra. A exploração
-              espacial tem sido um dos maiores empreendimentos científicos da humanidade e tem sido conduzida por
-              governos e
-              agências espaciais em todo o mundo. <br><br>
-              &nbsp;&nbsp;Hoje, as viagens espaciais estão cada vez mais avançadas. A Estação Espacial Internacional
-              orbita a Terra
-              continuamente, permitindo que astronautas de todo o mundo trabalhem juntos em experimentos científicos e
-              em pesquisas espaciais. As agências espaciais também estão planejando missões para enviar seres humanos
-              para Marte e explorar ainda mais profundamente o espaço.
+          <div class="cards_mensagem">
+            <div class="img_rocket">
+              <img src="./assets/img//Starting a business project-amico (3).png">
+            </div>
 
+            <div class="informação">
+              <p class="paragrafo_3">&nbsp;&nbsp;A exploração espacial é a atividade humana de enviar naves espaciais,
+                satélites e astronautas ao espaço para estudar, entender e explorar o universo além da Terra. A
+                exploração
+                espacial tem sido um dos maiores empreendimentos científicos da humanidade e tem sido conduzida por
+                governos e
+                agências espaciais em todo o mundo. <br><br>
+                &nbsp;&nbsp;Hoje, as viagens espaciais estão cada vez mais avançadas. A Estação Espacial Internacional
+                orbita a Terra
+                continuamente, permitindo que astronautas de todo o mundo trabalhem juntos em experimentos científicos e
+                em pesquisas espaciais. As agências espaciais também estão planejando missões para enviar seres humanos
+                para Marte e explorar ainda mais profundamente o espaço.
+
+              </p>
+            </div>
+          </div>
+          <h5 style="color: #47077F;">Curiosidades</h5>
+          <div class="separacao">
+            <div class="cards">
+              <div class="card red">
+                <p class="tip">Primeiro animal no espaço</p>
+                <p class="second-text">A União Soviética foi responsável por enviar o primeiro animal ao espaço. Em
+                  1957, a cadela Laika se tornou o primeiro ser vivo a orbitar a Terra a bordo da nave espacial Sputnik
+                  2.</p>
+              </div>
+              <div class="card red">
+                <p class="tip">Pegadas na Lua</p>
+                <p class="second-text"> As pegadas deixadas pelos astronautas da missão Apollo na Lua ainda estão lá.
+                  Devido à ausência de atmosfera e vento no ambiente lunar, as pegadas permanecem preservadas ao longo
+                  dos anos.</p>
+              </div>
+              <div class="card blue">
+                <p class="tip">Comida no espaço</p>
+                <p class="second-text"> A comida consumida pelos astronautas no espaço é especialmente preparada para
+                  atender às necessidades nutricionais e às restrições de peso e espaço. Ela é desidratada, embalada a
+                  vácuo e pode ser reidratada com água antes de ser consumida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="jogo-quiz">
+    <div class="conteiner">
+      <div class="divulgacao">
+        <div class="banner-quiz">
+          <span class="divisoria">
+            <h5 style="color: #47077F;">Space quiz</h5>
+            <p class="frase_quiz">
+              &nbsp;&nbsp;Agora que você já sabe bastante coisa sobre o universo e quer continuar aprendendo,
+              cadastre-se e teste seus conhecimentos.
+              Você poderá analisar seu desempenho, saber sua pontuação
+               e ainda vê sua posição em um ranking com todos os jogadores!
+              <button id="btn_cadastrar_mais">cadastre-se</button>
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <!-- conteudo 3 -->
-  <!-- <div class="viagem">
-    <div class="container">
-      <div class="conteudo_viagem">
-        <h1 class="titulo_3" style="color: #47077F;">Você sabe o que é exploração espacial?</h1>
-        <p class="paragrafo_3">&nbsp;&nbsp;Agora que você já sabe como foi criado o universo e todos os planetas do
-          nosso
-          sistema solar,
-          vamos falar um pouco sobre as explorações espaciais:
-          <br><br>
-          &nbsp;&nbsp; A exploração espacial é a atividade humana de enviar naves espaciais,
-          satélites e astronautas ao espaço para estudar, entender e explorar o universo além da Terra. A exploração
-          espacial tem sido um dos maiores empreendimentos científicos da humanidade e tem sido conduzida por governos e
-          agências espaciais em todo o mundo.
-          <br><br>
-        <div class="divisao">
-          <div class="sputnik">
-            <img class="img_sputnik"
-              src="https://www.eulixe.com/media/eulixe/images/2019/10/04/2019100402084577102.jpg">
-            <p class="paragrafo">Sputnik 1</p>
-          </div>
-          <p class="paragrafo_4">&nbsp;&nbsp; A União Soviética lançou o primeiro satélite, o Sputnik 1, em 1957,
-            iniciando
-            a corrida espacial com os
-            Estados Unidos. Desde então, várias missões históricas foram realizadas, incluindo o voo do primeiro ser
-            humano no espaço, Yuri Gagarin, em 1961, e a chegada do homem à Lua pela Apollo 11 em 1969.
-            <br><br>
-            &nbsp;&nbsp; Hoje, a exploração espacial continua em andamento com missões científicas em andamento em
-            todo o sistema
-            solar. Agências espaciais como a NASA dos Estados Unidos, a Agência Espacial Europeia, a Agência Espacial
-            Russa, a Agência Japonesa de Exploração Aeroespacial e a Agência Espacial Chinesa conduzem missões em órbita
-            terrestre, bem como missões em Marte, na Lua, em asteroides e cometas, e até mesmo além do nosso sistema
-            solar.
-          </p>
-        </div>
-        <p class="paragrafo_3">
-          &nbsp;&nbsp;As missões espaciais têm como objetivo aprender mais sobre o universo, a fim de entender melhor a
-          origem e a
-          evolução do sistema solar e do universo como um todo. Além disso, as missões espaciais têm implicações
-          significativas para a tecnologia, a medicina e o meio ambiente aqui na Terra. E tem sido importante para
-          avançar em campos como a tecnologia de satélites, comunicações,
-          transporte, fontes de energia renováveis, materiais avançados, agricultura, medicina e muito mais. Além disso,
-          a exploração espacial tem um papel fundamental na compreensão das mudanças climáticas e no monitoramento das
-          condições ambientais globais.
-          <br><br>
-      </div>
-    </div>
-  </div> -->
-
-
-  <div class="">
-    <div>
-      <div>
-        <div>
-
+          </span>
+          <img src="./assets/img/Questions-amico.png">
         </div>
       </div>
     </div>
@@ -640,6 +313,11 @@
       </div>
     </div>
   </div>
+
+  
+  <script src="script.js" type="module"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 

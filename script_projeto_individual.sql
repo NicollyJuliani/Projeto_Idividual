@@ -51,8 +51,31 @@ WHERE nickname = 'nicolly' limit 1;
 
 SELECT usuario.nickname, (select sum(pontuacao) from pontosUsuario group by fkUsuario)  FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario;
 
-select  usuario.nickname, sum(pontuacao) from pontosUsuario JOIN usuario ON fkUsuario = idUsuario group by fkUsuario
-HAVING sum(pontuacao) > (SELECT sum(pontuacao)  FROM pontosUsuario);
+select  usuario.nickname, sum(pontuacao) as PontuacãoMaxima from pontosUsuario JOIN usuario ON fkUsuario = idUsuario group by fkUsuario
+HAVING max(pontuacao) > (SELECT sum(pontuacao)  FROM pontosUsuario);
+
+SELECT usuario.nickname, SUM(pontuacao) AS PontuacãoMaxima
+FROM pontosUsuario
+JOIN usuario ON fkUsuario = idUsuario
+GROUP BY fkUsuario
+HAVING MAX(pontuacao) > (SELECT SUM(pontuacao) FROM pontosUsuario)
+ORDER BY PontuacãoMaxima DESC;
+
+SELECT usuario.nickname, SUM(pontuacao) AS PontuacaoMaxima
+FROM pontosUsuario
+JOIN usuario ON fkUsuario = idUsuario
+GROUP BY fkUsuario
+HAVING MAX(pontuacao) > (SELECT SUM(pontuacao) FROM pontosUsuario)
+ORDER BY PontuacaoMaxima DESC;
+
+SELECT usuario.nickname, SUM(pontuacao) AS PontuacãoMaxima
+FROM pontosUsuario
+JOIN usuario ON fkUsuario = idUsuario
+GROUP BY fkUsuario
+ORDER BY PontuacãoMaxima DESC;
+
+
+
 
 
 
