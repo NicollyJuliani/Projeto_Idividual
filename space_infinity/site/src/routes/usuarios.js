@@ -20,9 +20,17 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+// recebendo dados dos pontos do usuario 
 router.post("/pontos_finais", function (req, res) {
     usuarioController.pontos_finais(req, res);
 });
+
+//
+router.get("/ranking", function (req, res){
+    usuarioController.ranking(req, res);
+});
+
+// 
 
 
 

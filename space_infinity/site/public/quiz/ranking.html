@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,10 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style_ranking.css">
 </head>
-<body class="body_tudo">
+
+<body class="body_tudo" onload="visualizarRankig()">
+
+    
 
     <div class="stars"></div>
     <!-- Menu -->
@@ -62,84 +66,120 @@
     <script>
         let btn = document.querySelector("#btn");
         let sidebar = document.querySelector(".sidebar");
-    
+
         btn.onclick = function () {
             sidebar.classList.toggle("active");
         }
     </script>
 
     <!-- conteudo -->
-<div class="ranking-tudo">
-  <div class="ranking-container">
-    
-    <div class="ranking-top">
-      <h2>Top 3</h2>
-      <div id="topThreeList" class="ranking-list"></div>
-    </div>
-    
-    <div class="ranking-card">
-      <h2>Outros Colocados</h2>
-      <div id="otherPlayersList" class="ranking-list"></div>
-    </div>
+    <div class="ranking-tudo">
+        <div class="ranking-container">
 
-  </div>
-</div>
+            <div class="ranking-top">
+                <h2>Top 3</h2>
+                <div id="topThreeList" class="ranking-list">
+                    <!-- <div id="ranking_item"></div> -->
+                </div>
+            </div>
+
+            <div class="ranking-card">
+                <h2>Outros Colocados</h2>
+                <div id="otherPlayersList" class="ranking-list">
+                    <!-- <div id="ranking_item"></div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </body>
+
 </html>
 <script>
-    const topThreeList = document.getElementById('topThreeList');
-const otherPlayersList = document.getElementById('otherPlayersList');
-''
-// Dados dos usuários (exemplo)
-const usersData = [
-  { name: 'Usuário 1', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 1000 },
-  { name: 'Usuário 2', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 900 },
-  { name: 'Usuário 3', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 800 },
-  { name: 'Usuário 4', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 700 },
-  { name: 'Usuário 5', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 600 },
-  { name: 'Usuário 6', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 500 },
-  { name: 'Usuário 7', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 400 },
-  { name: 'Usuário 8', photo: 'https://th.bing.com/th/id/OIP.7g_ZljnxM-l-AK0duEwzXwHaHa?pid=ImgDet&rs=1', points: 300 },
-];
+    
+    validarSessao();
+    visualizarRankig();
+   
 
-// Ordena os usuários por pontos (maior para menor)
-const sortedUsers = usersData.sort((a, b) => b.points - a.points);
+    function visualizarRankig(){
+    fetch("/usuarios/ranking", {
+        method: 'GET'
+    }).then(function (resposta) {
 
-// Popula os cards do Top 3
-for (var i = 0; i < 3; i++) {
-  const user = sortedUsers[i];
-  const card = createRankingCard(user);
-  topThreeList.appendChild(card);
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                console.log("nenhuma resposta encontrada")
+            }
+
+             resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                topThreeList.innerHTML = "";
+                otherPlayersList.innerHTML = "";
+                for (var i = 0; i < 3; i++) {
+                    var user = resposta[i];
+
+                    topThreeList.innerHTML += `<h3>${user.nickname}</h3> <br>
+                    <p> ${user.pontos} </p>`
+                }
+
+                for (var i = 2; i < resposta.length; i++) {
+                    var user = resposta[i];
+
+                    otherPlayersList.innerHTML += `<h3>${user.nickname}</h3> <br>
+                    <p> ${user.pontos} </p>`
+                }
+
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+    
+    });
+
+
 }
 
-// Popula os outros colocados
-for (var i = 3; i < sortedUsers.length; i++) {
-  const user = sortedUsers[i];
-  const card = createRankingCard(user);
-  otherPlayersList.appendChild(card);
-}
 
-function createRankingCard(user) {
-  const card = document.createElement('div');
-  card.className = 'ranking-item';
+    
 
-  const img = document.createElement('img');
-  img.src = user.photo;
-  img.alt = user.name;
+    // Popula os cards do Top 3
+    // for (var i = 0; i < 3; i++) {
+    //     const user = sortedUsers[i];
+    //     const card = createRankingCard(user);
+    //     topThreeList.appendChild(card);
+    // }
 
-  const name = document.createElement('h3');
-  name.textContent = user.name;
+    // Popula os outros colocados
+    // for (var i = 3; i < sortedUsers.length; i++) {
+    //     const user = sortedUsers[i];
+    //     const card = createRankingCard(user);
+    //     otherPlayersList.appendChild(card);
+    // }
 
-  const points = document.createElement('p');
-  points.textContent = `${user.points} pontos`;
+    // function createRankingCard(user) {
+    //     const card = document.createElement('div');
+    //     card.className = 'ranking-item';
 
-  card.appendChild(img);
-  card.appendChild(name);
-  card.appendChild(points);
+    //     const img = document.createElement('img');
+    //     img.src = user.photo;
+    //     img.alt = user.name;
 
-  return card;
-}
+    //     const name = document.createElement('h3');
+    //     name.textContent = user.name;
 
- </script>
+    //     const points = document.createElement('p');
+    //     points.textContent = `${user.points} pontos`;
+
+    //     card.appendChild(img);
+    //     card.appendChild(name);
+    //     card.appendChild(points);
+
+    //     return card;
+    // }
+
+</script>

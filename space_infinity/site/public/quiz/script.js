@@ -58,6 +58,7 @@ function finish() {
   var id = sessionStorage.IDUSUARIO_USUARIO;
   console.log(id)
 
+  function reiniciarJogo(){
 fetch("/usuarios/pontos_finais", {
   method: "POST",
   headers: {
@@ -82,10 +83,6 @@ fetch("/usuarios/pontos_finais", {
           sessionStorage.IDUSUARIO_USUARIO = json.idUsuario;
           // sessionStorage.CPF_USUARIO = json.cpf;
 
-          setTimeout(function () {
-              window.location = "./quiz/index.html";
-          }, 1000); // apenas para exibir o loading
-
       });
 
   } else {
@@ -103,6 +100,7 @@ fetch("/usuarios/pontos_finais", {
 })
 
 return false;
+}
 }
 
 

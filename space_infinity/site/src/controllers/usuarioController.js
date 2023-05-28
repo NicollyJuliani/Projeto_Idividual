@@ -110,7 +110,7 @@ function pontos_finais(req, res){
             function (resultado){
                 res.json(resultado);
             }
-            ).cacth(
+            ).catch(
                 function (erro){
                     console.log(erro);
                     console.log(
@@ -124,10 +124,47 @@ function pontos_finais(req, res){
     }
 
 
+    // function ranking(req, res){
+    //     usuarioModel.ranking()
+    //     .then(
+    //         function (resultado){
+    //             res.json(resultado);
+    //         }
+    //         ).cacth(
+    //             function (erro){
+    //                 console.log(erro);
+    //                 console.log(
+    //                     "\nHouve um problema ao cadastrar os pontos! erros: ",
+    //                     erro.sqlMessage
+    //                 );
+    //                 res.status(500).json(erro.sqlMessage);
+    //             }
+    //         );
+    //     }
+
+    function ranking(req, res) {
+        usuarioModel.ranking()
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
-    pontos_finais
+    pontos_finais,
+    ranking
 }
