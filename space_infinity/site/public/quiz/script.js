@@ -58,7 +58,6 @@ function finish() {
   var id = sessionStorage.IDUSUARIO_USUARIO;
   console.log(id)
 
-  function reiniciarJogo(){
 fetch("/usuarios/pontos_finais", {
   method: "POST",
   headers: {
@@ -77,12 +76,13 @@ fetch("/usuarios/pontos_finais", {
       resposta.json().then(json => {
           console.log(json);
           console.log(JSON.stringify(json));
+          console.log("Respota com sucesso");
 
-          sessionStorage.EMAIL_USUARIO = json.email;
-          sessionStorage.NICKNAME_USUARIO = json.nickname;
-          sessionStorage.IDUSUARIO_USUARIO = json.idUsuario;
-          // sessionStorage.CPF_USUARIO = json.cpf;
+          // sessionStorage.EMAIL_USUARIO = json.email;
+          // sessionStorage.NICKNAME_USUARIO = json.nickname;
+          // sessionStorage.IDUSUARIO_USUARIO = json.idUsuario;
 
+          console.log(pontos)
       });
 
   } else {
@@ -101,7 +101,7 @@ fetch("/usuarios/pontos_finais", {
 
 return false;
 }
-}
+
 
 
 function loadQuestion() {

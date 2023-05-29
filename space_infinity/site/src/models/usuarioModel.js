@@ -92,7 +92,7 @@ function ranking() {
       JOIN usuario ON fkUsuario = idUsuario
       GROUP BY fkUsuario
       ORDER BY pontos DESC;
-    `
+    `;
 
     return database.executar(instrucao);
 }
