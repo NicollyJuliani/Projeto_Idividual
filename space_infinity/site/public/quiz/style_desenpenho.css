@@ -1,13 +1,13 @@
-.desempenho{
+.desempenho {
     width: 100%;
 }
 
-.conteiner{
+.conteiner {
     display: flex;
     flex-direction: row;
 }
 
-.usuario{
+.usuario {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -15,10 +15,10 @@
     height: auto;  */
 }
 
-.avatar{
+.avatar {
     width: 200px;
     height: 150px;
-    background-color:  #950000; 
+    background-color: #950000;
     border-radius: 30px;
     margin-top: 3%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -28,7 +28,7 @@
     background-size: 200px;
 }
 
-.avatar img{
+.avatar img {
     width: 200px;
     height: 100px;
     display: flex;
@@ -37,54 +37,75 @@
     margin-top: 10%;
 }
 
-.nome{
+.nome {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     /* margin-left: 10%; */
+    width: 600px;
     margin-top: 1%;
 }
 
-.frase{
+.frase {
     margin-top: 10%;
-    margin-left: 5%;
+    margin-left: 35%;
 }
 
-.frase p{
+.frase p {
     font-size: 1.5rem;
     color: #eee;
 }
 
+.frase .frase_desem{
+    font-size: 1.2rem;
+}
+
+/*card  desempenho */
+.card-tudo {
+    display: flex;
+    justify-content: right;
+}
+
+.card-analise {
+    width: 350px;
+    height: 150px;
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 30%;
+    border: 2px solid white;
+}
+
+.card-analise p {
+    font-size: 1.2rem;
+}
+
+
 /*Gráfico*/
-.grafico{
+.grafico {
     width: auto;
     display: flex;
     flex-direction: row;
     margin-left: 10%;
-    /* justify-content: space-evenly; */
 }
 
-.grafico-chart{
-    display: flex;
-    /* justify-content: right; */
-}
 
-.fundo-grafico{
-    width: 350px;
-    height: 350px;
-    background-color: #ffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.092), 0 6px 20px 0 rgba(255, 255, 255, 0.172);
-    margin-top: 30%;
-}
 
-.grafico-chart2{
+.grafico-chart2 {
     display: flex;
     justify-content: right;
     margin-left: 10%;
-    color:  #8d8585;
+    color: #ffffff;
+    margin-top: 10%;
+    margin-left: 15%;
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
-.fundo-grafico2{
+/* .fundo-grafico2{
     width: 800px;
     height: 400px;
     background-color: #ffff;
@@ -92,50 +113,42 @@
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.092), 0 6px 20px 0 rgba(255, 255, 255, 0.172);
     margin-top: 10%;
    
-}
+} */
 
-canvas{
+canvas {
     align-self: center;
 }
-.chart2{ 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45vh; 
-    width: 45vw;
-    margin-left: 3%;
-}
+
 
 /*teste*/
-  
-  .skill {
+
+/* .skill {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     margin-left: -15%;
-  }
-  
-  .skill-name {
+}
+
+.skill-name {
     width: 120px;
     font-size: 16px;
-  }
-  
-  .skill-level {
+}
+
+.skill-level {
     width: 450px;
     height: 15px;
     background-color: #eee;
     border-radius: 10px;
     overflow: hidden;
-  }
-  
-  .skill-percent {
-    background: linear-gradient(90deg, rgb(210, 53, 225) 0%, rgba(77,39,182,1) 100%);
+}
+
+.skill-percent {
+    background: linear-gradient(90deg, rgb(210, 53, 225) 0%, rgba(77, 39, 182, 1) 100%);
     height: 100%;
-  }
-  
-  .skill-percent-number {
+}
+
+.skill-percent-number {
     margin-left: 20px;
     font-size: 1.3rem;
     color: #eee;
-  }
-  
+} */
