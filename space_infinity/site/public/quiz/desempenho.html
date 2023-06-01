@@ -99,14 +99,6 @@
 
 
         <div class="grafico">
-            <!-- <div>
-                <div class="grafico-chart">
-                    <div class="fundo-grafico">
-                        <canvas id="myChart2" class="chart2"></canvas>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="conteiner">
                 <div class="grafico-chart2">
                     <div class="fundo-grafico2">
@@ -138,6 +130,9 @@
 
 </html>
 <script>
+
+ grafico_func(3);
+
     const labels = [
         '5',
         '10',
@@ -146,12 +141,6 @@
         '25',
         '30',
     ];
-
-    const labels2 = [
-        'Acertos',
-        'Erros',
-    ];
-
 
     const data = {
         labels: labels,
@@ -164,29 +153,10 @@
         ]
 
     };
-    // const data2 = {
-    //     labels: labels2,
-    //     datasets: [{
-    //         label: 'Quantidade de questões',
-    //         backgroundColor: ['rgb(255, 99, 132)', '#302b63'],
-    //         // borderColor: 'rgb(255, 99, 132)',
-    //         data: [20, 15],
-    //         cutout: 80,
-
-    //     },
-    //     ]
-    // };
-
     const config = {
         type: 'bar',
         data: data,
         options: {}
-    };
-
-    const config2 = {
-        type: 'doughnut',
-        data: data2,
-        options: { response: true }
     };
 
 </script>
@@ -196,8 +166,21 @@
         config
     );
 
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
+    function grafico_func(idUsuario){
+
+    fetch(`/usuarios/grafico/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+        }
 </script>

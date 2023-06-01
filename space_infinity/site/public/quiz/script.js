@@ -11,9 +11,10 @@ const btnRestart = document.querySelector(".finish button");
 import questions from "./questions.js";
 
 // declarando duas variaveis, para armazenar o index da questão atual e a outra a quantidade de acertos
-let currentIndex = 0;
-let questionsCorrect = 0;
+var currentIndex = 0;
+var questionsCorrect = 0;
 var pontos = 0;
+
 
 // botão para reiniciar 
 btnRestart.onclick = () => {
@@ -91,7 +92,6 @@ fetch("/usuarios/pontos_finais", {
 
       resposta.text().then(texto => {
           console.error(texto);
-          // finalizarAguardar(texto);
       });
   }
 

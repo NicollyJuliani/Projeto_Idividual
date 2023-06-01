@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -76,9 +76,9 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else if (dtNasc == undefined) {
-    res.status(400).send("Sua data de nascimento está undefined!");
+        res.status(400).send("Sua data de nascimento está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nickname, email, dtNasc, senha)
             .then(
@@ -98,20 +98,20 @@ function cadastrar(req, res) {
     }
 }
 
-function pontos_finais(req, res){
+function pontos_finais(req, res) {
     var pontosFinais = req.body.pontoServer;
     var fkUsuario = req.body.idServer;
 
-    if(pontosFinais == undefined){
+    if (pontosFinais == undefined) {
         res.status(400).send("Seus pontos estão indefinidos")
-    }else{
+    } else {
         usuarioModel.pontos_finais(fkUsuario, pontosFinais)
-        .then(
-            function (resultado){
-                res.json(resultado);
-            }
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
             ).catch(
-                function (erro){
+                function (erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um problema ao cadastrar os pontos! erros: ",
@@ -120,45 +120,43 @@ function pontos_finais(req, res){
                     res.status(500).json(erro.sqlMessage);
                 }
             );
+    }
+}
+
+function ranking(req, res) {
+    usuarioModel.ranking()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function grafico(req, res){
+    var idUsuario = req.params.idServer;
+    usuarioModel.grafico(idUsuario)
+    .then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
         }
-    }
-
-
-    // function ranking(req, res){
-    //     usuarioModel.ranking()
-    //     .then(
-    //         function (resultado){
-    //             res.json(resultado);
-    //         }
-    //         ).cacth(
-    //             function (erro){
-    //                 console.log(erro);
-    //                 console.log(
-    //                     "\nHouve um problema ao cadastrar os pontos! erros: ",
-    //                     erro.sqlMessage
-    //                 );
-    //                 res.status(500).json(erro.sqlMessage);
-    //             }
-    //         );
-    //     }
-
-    function ranking(req, res) {
-        usuarioModel.ranking()
-            .then(function (resultado) {
-                if (resultado.length > 0) {
-                    res.status(200).json(resultado);
-                } else {
-                    res.status(204).send("Nenhum resultado encontrado!")
-                }
-            }).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-
+    }).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
 
 module.exports = {
     entrar,
@@ -166,5 +164,6 @@ module.exports = {
     listar,
     testar,
     pontos_finais,
-    ranking
+    ranking,
+    grafico
 }

@@ -46,4 +46,49 @@ export default [
       { option: "Alpha Centauri C", correct: false },
     ],
   },
+  {
+    question: "Qual é a estrela mais próxima do nosso sistema solar?",
+    answers: [
+      { option: "Proxima Centauri", correct: true },
+      { option: "Alpha Centauri A", correct: false },
+      { option: "Alpha Centauri B", correct: false },
+      { option: "Alpha Centauri C", correct: false },
+    ],
+  },
+  {
+    question: "Qual é o planeta mais denso do sistema solar?",
+    answers: [
+      { option: "Terra", correct: false },
+      { option: "Júpiter", correct: false },
+      { option: "Saturno", correct: false },
+      { option: "Mercúrio", correct: true },
+    ],
+  },
+  {
+    question: "Qual é o planeta mais distante do sistema solar?",
+    answers: [
+      { option: "Netuno", correct: false },
+      { option: "Urano", correct: false },
+      { option: "Éris", correct: true },
+      { option: "Plutão", correct: false },
+    ],
+  },
+  {
+    question: "O que é uma nebulosa?",
+    answers: [
+      { option: "Uma nuvem interestelar de gás e poeira", correct: true },
+      { option: "Uma galáxia com formato espiral", correct: false },
+      { option: "Um planeta fora do sistema solar", correct: false },
+      { option: "Uma estrela que está morrendo", correct: false },
+    ],
+  },
+  {
+    question: "Qual é a estrela mais próxima do nosso sistema solar?",
+    answers: [
+      { option: "Proxima Centauri", correct: true },
+      { option: "Alpha Centauri A", correct: false },
+      { option: "Alpha Centauri B", correct: false },
+      { option: "Alpha Centauri C", correct: false },
+    ],
+  },
 ];

@@ -30,8 +30,9 @@ router.get("/ranking", function (req, res){
     usuarioController.ranking(req, res);
 });
 
-// 
-
-
+//
+router.get("/grafico:idUsuario", function (req, res){
+    usuarioController.grafico(req, res);
+});
 
 module.exports = router;

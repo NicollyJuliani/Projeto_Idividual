@@ -33,36 +33,6 @@ function cadastrar(nickname, email, dtNasc, senha) {
   return database.executar(instrucao);
 }
 
-// tabela pontos
-// function pontos_finais(fkUsuario, pontosFinais){
-//     var instrucao = `
-//     INSERT INTO pontosUsuario (fkUsuario, pontuacao) VALUES ('${fkUsuario}','${pontosFinais}')`
-
-//     return database.executar(instrucao)
-// }
-
-// function obterNomeUsuario(fkUsuario) {
-//     var instrucao = `
-//       SELECT nome
-//       FROM usuario
-//       WHERE id = '${fkUsuario}'`;
-
-//     return database.executar(instrucao)
-//       .then(function (resultado) {
-//         // Extrair o nome do usuário do resultado da consulta
-//         var nomeUsuario = resultado[0].nome;
-//         return nomeUsuario;
-//       });
-//   }
-
-//   function pontos_finais(fkUsuario, pontosFinais, nomeUsuario) {
-//     var instrucao = `
-//       INSERT INTO pontosUsuario (fkUsuario, pontuacao, nomeUsuario)
-//       VALUES ('${fkUsuario}', '${pontosFinais}', '${nomeUsuario}')`;
-
-//     return database.executar(instrucao);
-//   }
-
 function pontos_finais(fkUsuario, pontosFinais) {
   var instrucao = `
       INSERT INTO pontosUsuario (fkUsuario, pontuacao) 
@@ -97,6 +67,14 @@ function ranking() {
     return database.executar(instrucao);
 }
 
+function grafico(idUsuario){
+  var instrucao = `
+  SELECT usuario.nickname, pontosUsuario.pontuacao FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
+  WHERE idUsuario = ${idUsuario};
+  `;
+
+  return database.executar(instrucao);
+}
 
 
 module.exports = {
@@ -105,5 +83,6 @@ module.exports = {
   listar,
   pontos_finais,
   obterNomeUsuario,
-  ranking
+  ranking,
+  grafico
 };
