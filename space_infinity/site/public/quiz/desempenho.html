@@ -81,8 +81,9 @@
                     </div> -->
                     <div class="nome">
                         <div class="frase">
-                            <p>Hello, Nicolly</p>
-                            <p class="frase_desem">Acompanhe seu desempenho com as pontuações
+                            <p>Hello, <spam id="nome_usuario"></spam>
+                            </p>
+                            <p class="frase_desem">Acompanhe seu desempenho com suas    pontuações
                             </p>
                         </div>
                     </div>
@@ -102,7 +103,7 @@
             <div class="conteiner">
                 <div class="grafico-chart2">
                     <div class="fundo-grafico2">
-                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:50vw"></canvas>
+                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:60vw"></canvas>
                     </div>
                 </div>
             </div>
@@ -111,14 +112,14 @@
 
 </body>
 
-<!-- <script>
+<script>
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
 
     btn.onclick = function () {
         sidebar.classList.toggle("active");
     }
-</script> -->
+</script>
 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -127,6 +128,8 @@
 </html>
 <script>
 
+
+    nome_usuario.innerHTML = sessionStorage.NICKNAME_USUARIO;
     // validarSessao();
     var idUsuario = sessionStorage.IDUSUARIO_USUARIO;
 

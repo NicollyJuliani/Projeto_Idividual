@@ -35,4 +35,8 @@ router.get("/grafico/:idServer", function (req, res){
     usuarioController.grafico(req, res);
 });
 
+router.get("/validarNome", function (req, res){
+    usuarioController.validarNome(req, res);
+});
+
 module.exports = router;

@@ -76,6 +76,14 @@ function grafico(idUsuario){
   return database.executar(instrucao);
 }
 
+function validarNome(){
+  var instrucao = `
+  SELECT nickname FROM usuario;
+  `;
+
+  return database.executar(instrucao);
+}
+
 
 module.exports = {
   entrar,
@@ -84,5 +92,6 @@ module.exports = {
   pontos_finais,
   obterNomeUsuario,
   ranking,
-  grafico
+  grafico,
+  validarNome
 };
