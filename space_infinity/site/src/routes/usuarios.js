@@ -31,7 +31,7 @@ router.get("/ranking", function (req, res){
 });
 
 //
-router.get("/grafico:idUsuario", function (req, res){
+router.get("/grafico/:idServer", function (req, res){
     usuarioController.grafico(req, res);
 });
 

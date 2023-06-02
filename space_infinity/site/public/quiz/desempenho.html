@@ -82,15 +82,15 @@
                     <div class="nome">
                         <div class="frase">
                             <p>Hello, Nicolly</p>
-                            <p class="frase_desem">Acompanhe seu desempenho com as pontuações  
+                            <p class="frase_desem">Acompanhe seu desempenho com as pontuações
                             </p>
                         </div>
                     </div>
-                        <div class="card-analise">
-                            <p>Total de Pontos: </p>
-                            <p>Pontos da ultima rodada: </p>
-                            <!-- <p></p> -->
-                        </div>
+                    <div class="card-analise">
+                        <p>Total de Pontos: </p>
+                        <p>Pontos da ultima rodada: </p>
+                        <!-- <p></p> -->
+                    </div>
                 </div>
                 <div>
                 </div>
@@ -102,7 +102,7 @@
             <div class="conteiner">
                 <div class="grafico-chart2">
                     <div class="fundo-grafico2">
-                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:60vw"></canvas>
+                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:50vw"></canvas>
                     </div>
                 </div>
             </div>
@@ -111,46 +111,37 @@
 
 </body>
 
-<script>
-    validarSessao();
-
-
+<!-- <script>
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
 
     btn.onclick = function () {
         sidebar.classList.toggle("active");
     }
-</script>
+</script> -->
 
 
-<script src="script.js" type="module"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
 <script>
 
- grafico_func(3);
+    // validarSessao();
+    var idUsuario = sessionStorage.IDUSUARIO_USUARIO;
 
     const labels = [
-        '5',
-        '10',
-        '15',
-        '20',
-        '25',
-        '30',
+
     ];
 
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Pontos',
+            label: '',
             backgroundColor: '#47077F',
-            // borderColor: 'rgb(255, 99, 132)',
-            data: [5, 10, 15, 20, 25, 30],
-        },
-        ]
+            borderColor: 'rgb(255, 99, 132)',
+            data: [],
+        }]
 
     };
     const config = {
@@ -159,22 +150,44 @@
         options: {}
     };
 
-</script>
-<script>
     const myChart = new Chart(
         document.getElementById('myChart'),
         config
     );
 
-    function grafico_func(idUsuario){
 
-    fetch(`/usuarios/grafico/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+    function graficosParametros(idUsuario) {
+        console.log(myChart.data);
+        fetch(`/usuarios/grafico/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
 
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: `, resposta);
+                    console.log(myChart.data);
+                    pont = []
+                    // for (let i = 0; i < resposta.length; i++) {
+                    //     const element = resposta[i];
+                    //     pont.push(element.pontuacao)
+                    // }
+
+                    for (var i = 0; i < resposta.length; i++) {
+                        myChart.data.datasets[0].data.push(resposta[i].pontuacao)
+                        labels.push(resposta[i].data)
+
+                        // myChart.data.datasets.push({
+                        //     label: '',
+                        //     backgroundColor: '#47077F',
+                        //       borderColor: 'rgb(255, 99, 132)',
+                        //     data: pont,
+                        // })
+
+
+                    }
+
+                    myChart.update()
                 });
+                console.log("Chegamos ao fijm");
+
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
             }
@@ -182,5 +195,11 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-        }
+
+        myChart.update()
+        myChart.update()
+        console.log("Final");
+    }
+
+    graficosParametros(idUsuario);
 </script>

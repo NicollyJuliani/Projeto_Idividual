@@ -69,8 +69,8 @@ function ranking() {
 
 function grafico(idUsuario){
   var instrucao = `
-  SELECT usuario.nickname, pontosUsuario.pontuacao FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
-  WHERE idUsuario = ${idUsuario};
+  SELECT usuario.nickname, pontosUsuario.pontuacao, date_format(dtPontuacao, '%d-%m') as data FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
+  WHERE fkUsuario = ${idUsuario} limit 10;
   `;
 
   return database.executar(instrucao);

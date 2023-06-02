@@ -47,7 +47,7 @@ INSERT INTO pontosUsuario VALUES
 (null, 100, 4, 100, default);
 
 SELECT usuario.nickname, pontosUsuario.pontuacao FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
-WHERE nickname = 'nicolly' limit 1;
+WHERE idUsuario = 2;
 
 SELECT usuario.nickname, (select sum(pontuacao) from pontosUsuario group by fkUsuario)  FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario;
 
@@ -73,6 +73,8 @@ FROM pontosUsuario
 JOIN usuario ON fkUsuario = idUsuario
 GROUP BY fkUsuario
 ORDER BY PontuacãoMaxima DESC;
+
+SELECT 
 
 
 
