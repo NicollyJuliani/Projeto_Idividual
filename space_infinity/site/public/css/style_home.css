@@ -637,6 +637,15 @@ h5 {
     fill: #333;
 }
 
+.nome_footer{
+    color: white;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
 /* rolavel */
 ::-webkit-scrollbar{
     width: 15px;

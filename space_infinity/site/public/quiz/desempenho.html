@@ -81,15 +81,15 @@
                         <div class="frase">
                             <p>Hello, <spam id="nome_usuario"></spam>
                             </p>
-                            <p class="frase_desem">Acompanhe seu desempenho com suas    pontuações
+                            <p class="frase_desem">Acompanhe seu desempenho com suas pontuações
                             </p>
                         </div>
                     </div>
                     <div class="card-analise">
-                        <p>Total de Pontos:  </p>
+                        <p>Total de Pontos: <span id="total_pontos"></span> </p>
                         <p>Pontos da ultima rodada: <span id="pontos_input"></span></p>
-                        <p>Quantidade de jogadas: </p>
-                        
+                        <p>Quantidade de jogadas: <span id="qtd_quetion"></span></p>
+
                     </div>
                 </div>
                 <div>
@@ -132,10 +132,8 @@
     // validarSessao();
     var idUsuario = sessionStorage.IDUSUARIO_USUARIO;
 
-    
-    pontos_input.innerHTML = sessionStorage.PONTUACAO_USUARIO;
 
-    
+
 
     const labels = [
 
@@ -172,24 +170,19 @@
                     console.log(`Dados recebidos: `, resposta);
                     console.log(myChart.data);
                     pont = []
-                    // for (let i = 0; i < resposta.length; i++) {
-                    //     const element = resposta[i];
-                    //     pont.push(element.pontuacao)
-                    // }
 
+                    var soma =  0;
                     for (var i = 0; i < resposta.length; i++) {
                         myChart.data.datasets[0].data.push(resposta[i].pontuacao)
                         labels.push(resposta[i].data)
 
-                        // myChart.data.datasets.push({
-                        //     label: '',
-                        //     backgroundColor: '#47077F',
-                        //       borderColor: 'rgb(255, 99, 132)',
-                        //     data: pont,
-                        // })
+                        soma += resposta[i].pontuacao
 
-
+                        total_pontos.innerHTML = soma;
                     }
+
+                    pontos_input.innerHTML = resposta[resposta.length - 1].pontuacao;
+                    qtd_quetion.innerHTML = resposta.length;
 
                     myChart.update()
                 });

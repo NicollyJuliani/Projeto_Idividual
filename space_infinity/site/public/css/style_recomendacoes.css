@@ -49,7 +49,7 @@ img:hover{
 }
 
 .box_filmes p{
-    font-size: 17px;
+    font-size: 1.2rem;
     margin-top: -2%;
 }
 
@@ -144,4 +144,7 @@ img:hover{
   .coracao input:checked ~ svg {
     fill: #47077F;
   }
+
+
+
   

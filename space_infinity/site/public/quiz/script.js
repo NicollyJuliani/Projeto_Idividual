@@ -12,7 +12,7 @@ import questions from "./questions.js";
 
 // declarando duas variaveis, para armazenar o index da questão atual e a outra a quantidade de acertos
 var currentIndex = 0;
-var questionsCorrect = 0;
+var qtd_questao_correta = 0;
 var pontos = 0;
 
 
@@ -22,7 +22,7 @@ btnRestart.onclick = () => {
   contentFinish.style.display = "none";
 
   currentIndex = 0;
-  questionsCorrect = 0;
+  qtd_questao_correta = 0;
   pontos = 0;
   loadQuestion();
 };
@@ -30,7 +30,7 @@ btnRestart.onclick = () => {
 // function para passar a proxima pergunta e atribuir ponto
 function nextQuestion(e) {
   if (e.target.getAttribute("data-correct") === "true") {
-    questionsCorrect++;
+    qtd_questao_correta++;
     pontos += 10;
   }
   // verifica se não é a ulta questão e se não for vai aumentar mais uma ou finalizar
@@ -44,14 +44,14 @@ function nextQuestion(e) {
 // funcão para finalizar mostrando os pontos e as questões
 function finish() {
   textFinish.innerHTML = "";
-  if (questionsCorrect >= 0 && questionsCorrect <= 2) {
+  if (qtd_questao_correta >= 0 && qtd_questao_correta <= 4) {
     textFinish.innerHTML += `Não foi dessa vez &#128557 <br>`;
-  } else if (questionsCorrect <= 4) {
+  } else if (qtd_questao_correta <= 7) {
     textFinish.innerHTML += `Está quase lá &#128579 <br>`;
   } else {
     textFinish.innerHTML += `Você arrasou &#128512 <br> `
   }
-  textFinish.innerHTML += `você acertou ${questionsCorrect} de ${questions.length} <br>
+  textFinish.innerHTML += `você acertou ${qtd_questao_correta} de ${questions.length} <br>
   Sua pontuação foi ${pontos} pontos`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
@@ -101,8 +101,6 @@ fetch("/usuarios/pontos_finais", {
 
 return false;
 }
-
-
 
 function loadQuestion() {
   // currentIndex + 1 é divida pela quantidade de questões

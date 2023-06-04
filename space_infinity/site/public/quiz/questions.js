@@ -83,12 +83,12 @@ export default [
     ],
   },
   {
-    question: "Qual é a estrela mais próxima do nosso sistema solar?",
+    question: "O que é a Via Láctea?",
     answers: [
-      { option: "Proxima Centauri", correct: true },
-      { option: "Alpha Centauri A", correct: false },
-      { option: "Alpha Centauri B", correct: false },
-      { option: "Alpha Centauri C", correct: false },
+      { option: "Um buraco negro supermassivo", correct: false },
+      { option: "Um tipo de meteorito", correct: false },
+      { option: "Um cometa famoso", correct: false },
+      { option: "Galáxia onde o Sistema Solar está localizado", correct: true },
     ],
   },
 ];

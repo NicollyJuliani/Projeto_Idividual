@@ -288,7 +288,7 @@
               cadastre-se e teste seus conhecimentos.
               Você poderá analisar seu desempenho, saber sua pontuação
                e ainda vê sua posição em um ranking com todos os jogadores!
-              <button id="btn_cadastrar_mais">cadastre-se</button>
+              <button id="btn_cadastrar_mais" onclick="btn_cadastrar()">cadastre-se</button>
             </p>
           </span>
           <img src="./assets/img/Questions-amico.png">
@@ -301,6 +301,7 @@
   <div class="desktop_bottom">
     <div class="container">
       <div class="slide-container">
+       
         <div class="social-buttons">
           <a href="https://github.com/NicollyJuliani" class="social-button github">
             <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
@@ -310,6 +311,7 @@
             </svg>
           </a>
         </div>
+        <p class="nome_footer">Feito por Nicolly Juliane, 1ADSC</p>
       </div>
     </div>
   </div>
@@ -322,3 +324,11 @@
 </body>
 
 </html>
+
+<script>
+
+  function btn_cadastrar(){
+    window.location = 'cadastro.html';
+  }
+
+</script>
