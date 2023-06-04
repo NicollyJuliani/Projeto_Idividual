@@ -1,6 +1,8 @@
+/*Criação de Banco de dados da Space Infinity*/
 CREATE DATABASE Projeto_individual;
 USE  Projeto_individual;
 
+/*Table Usuario*/
 CREATE TABLE usuario(
 idUsuario INT PRIMARY KEY auto_increment,
 nickname VARCHAR(45),
@@ -9,24 +11,19 @@ dtNasc DATE,
 senha VARCHAR(45)
 );
 
-SELECT * FROM usuario;
-
-INSERT INTO usuario VALUES	
-(NULL, 	'melissa', 'melissa@gmail.com', null, '12345');
-
-DELETE FROM usuario WHERE idUsuario = 2;
-DELETE FROM usuario WHERE idUsuario = 9;
-
+/*Tabela do jogo*/
 CREATE TABLE jogo(
 idJogo INT primary KEY auto_increment,
 nomeJogo varchar(45),
 pontuacaoMax INT
 )auto_increment = 100;
 
+/*Inserindo dios jogos e suas pontuações maximas na tabela*/
 INSERT INTO jogo VALUES 
 (null, "Quiz", "100"),
 (null, "Quiz 2", "100");
 
+/*Tabela pontuação do Usuario*/
 CREATE TABLE pontosUsuario(
 idPontos INT PRIMARY KEY auto_increment,
 FkJogo INT,
@@ -37,48 +34,28 @@ constraint comp_fkJogo foreign key (FkJogo) references jogo(idJogo),
 constraint comp_fkUsuario foreign key (fkUsuario) references usuario(idUsuario)
 )auto_increment = 1000;
 
-SELECT * FROM pontosUsuario;
-SELECT * FROM usuario;
-desc pontosUsuario;
+/*Alterando a date para datetime*/
 ALTER TABLE pontosUsuario modify column dtPontuacao datetime default current_timestamp;
 
-INSERT INTO pontosUsuario VALUES
-(null, 100, 3, 20, default),
-(null, 100, 4, 100, default);
+/*Selects das tabelas*/
+SELECT * FROM usuario;
+SELECT * FROM jogo;
+SELECT * FROM pontosUsuario;
 
+/*Select para mostrar nome do usuario e seus respectivos pontos de acordo com a fkUsuario*/
 SELECT usuario.nickname, pontosUsuario.pontuacao FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
-WHERE idUsuario = 2;
+WHERE idUsuario = 3;
 
-SELECT usuario.nickname, (select sum(pontuacao) from pontosUsuario group by fkUsuario)  FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario;
-
-select  usuario.nickname, sum(pontuacao) as PontuacãoMaxima from pontosUsuario JOIN usuario ON fkUsuario = idUsuario group by fkUsuario
-HAVING max(pontuacao) > (SELECT sum(pontuacao)  FROM pontosUsuario);
-
-SELECT usuario.nickname, SUM(pontuacao) AS PontuacãoMaxima
-FROM pontosUsuario
-JOIN usuario ON fkUsuario = idUsuario
-GROUP BY fkUsuario
-HAVING MAX(pontuacao) > (SELECT SUM(pontuacao) FROM pontosUsuario)
-ORDER BY PontuacãoMaxima DESC;
-
+/*Select para mostar o nome do usuario e a soma dos seus pontos, agrupados pela fk do usuario e ordenado pela pontuacao*/
 SELECT usuario.nickname, SUM(pontuacao) AS PontuacaoMaxima
 FROM pontosUsuario
 JOIN usuario ON fkUsuario = idUsuario
 GROUP BY fkUsuario
-HAVING MAX(pontuacao) > (SELECT SUM(pontuacao) FROM pontosUsuario)
 ORDER BY PontuacaoMaxima DESC;
 
-SELECT usuario.nickname, SUM(pontuacao) AS PontuacãoMaxima
-FROM pontosUsuario
-JOIN usuario ON fkUsuario = idUsuario
-GROUP BY fkUsuario
-ORDER BY PontuacãoMaxima DESC;
+/*Select para mostrar nome do usuario, todas suas pontuações e a data, pegando somente o dia e o mes e com o limite de 10 pontos*/
+SELECT usuario.nickname, pontosUsuario.pontuacao, date_format(dtPontuacao, '%d-%m') as data FROM usuario JOIN pontosUsuario ON fkUsuario = idUsuario
+WHERE fkUsuario = 15 limit 10;
 
-SELECT 
-
-
-
-
-
-
-
+/*Select para mostar somente os nomes dos usuarios*/
+SELECT nickname FROM usuario;
