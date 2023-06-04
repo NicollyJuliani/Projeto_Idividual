@@ -77,8 +77,6 @@
             <div class="conteiner">
 
                 <div class="usuario">
-                    <!-- <div class="avatar">
-                    </div> -->
                     <div class="nome">
                         <div class="frase">
                             <p>Hello, <spam id="nome_usuario"></spam>
@@ -88,9 +86,10 @@
                         </div>
                     </div>
                     <div class="card-analise">
-                        <p>Total de Pontos: </p>
-                        <p>Pontos da ultima rodada: </p>
-                        <!-- <p></p> -->
+                        <p>Total de Pontos:  </p>
+                        <p>Pontos da ultima rodada: <span id="pontos_input"></span></p>
+                        <p>Quantidade de jogadas: </p>
+                        
                     </div>
                 </div>
                 <div>
@@ -103,7 +102,7 @@
             <div class="conteiner">
                 <div class="grafico-chart2">
                     <div class="fundo-grafico2">
-                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:60vw"></canvas>
+                        <canvas id="myChart" class="chart" style="position: relative; height:50vh; width:65vw"></canvas>
                     </div>
                 </div>
             </div>
@@ -132,6 +131,11 @@
     nome_usuario.innerHTML = sessionStorage.NICKNAME_USUARIO;
     // validarSessao();
     var idUsuario = sessionStorage.IDUSUARIO_USUARIO;
+
+    
+    pontos_input.innerHTML = sessionStorage.PONTUACAO_USUARIO;
+
+    
 
     const labels = [
 

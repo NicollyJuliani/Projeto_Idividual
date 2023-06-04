@@ -636,3 +636,17 @@ h5 {
 .github:hover svg {
     fill: #333;
 }
+
+/* rolavel */
+::-webkit-scrollbar{
+    width: 15px;
+   }
+  
+   ::-webkit-scrollbar-track{
+      background-color: #fff;
+   }
+   
+   ::-webkit-scrollbar-thumb{
+    background-color: #47077F;
+    border-radius: 8px;
+  }

@@ -125,3 +125,16 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
 }
+
+::-webkit-scrollbar{
+    width: 15px;
+   }
+  
+   ::-webkit-scrollbar-track{
+      background-color: black;
+   }
+   
+   ::-webkit-scrollbar-thumb{
+    background-color: #1c193d;
+    border-radius: 8px;
+  }

@@ -51,8 +51,6 @@ img{
 
 /*formulario*/
 .login-box {
-    /* display: flex;
-    flex-direction: row;  */
     position:absolute;
     top: 50%;
     left: 75%;
@@ -68,7 +66,7 @@ img{
   }
   
   .login-box p:first-child {
-    margin: 0 0 30px;
+    margin: 0 0 50px;
     padding: 0;
     color: #fff;
     text-align: center;
@@ -85,7 +83,7 @@ img{
   .login-box .user-box input {
     width: 100%;
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     margin-bottom: 30px;
     border: none;
@@ -98,8 +96,8 @@ img{
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 12px 0;
+    font-size: 50px;
     color: #fff;
     pointer-events: none;
     transition: .5s;
@@ -107,10 +105,10 @@ img{
   
   .login-box .user-box input:focus ~ label,
   .login-box .user-box input:valid ~ label {
-    top: -20px;
+    top: -30px;
     left: 0;
     color: #fff;
-    font-size: 12px;
+    font-size: 19px;
   }
   
   .login-box form a {
@@ -148,7 +146,7 @@ img{
     animation: btn-anim1 1.5s linear infinite;
   }
   
-  @keyframes btn-anim1 {
+  /* @keyframes btn-anim1 {
     0% {
       left: -100%;
     }
@@ -157,7 +155,7 @@ img{
       left: 100%;
     }
   }
-  
+   */
   .login-box a span:nth-child(2) {
     top: -100%;
     right: 0;
@@ -167,7 +165,7 @@ img{
     animation: btn-anim2 1.5s linear infinite;
     animation-delay: .375s
   }
-  
+/*   
   @keyframes btn-anim2 {
     0% {
       top: -100%;
@@ -176,7 +174,7 @@ img{
     50%,100% {
       top: 100%;
     }
-  }
+  } */
   
   .login-box a span:nth-child(3) {
     bottom: 0;
@@ -187,7 +185,7 @@ img{
     animation: btn-anim3 1.5s linear infinite;
     animation-delay: .75s
   }
-  
+/*   
   @keyframes btn-anim3 {
     0% {
       right: -100%;
@@ -197,7 +195,7 @@ img{
       right: 100%;
     }
   }
-  
+   */
   .login-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
@@ -207,7 +205,7 @@ img{
     animation: btn-anim4 1.5s linear infinite;
     animation-delay: 1.125s
   }
-  
+/*   
   @keyframes btn-anim4 {
     0% {
       bottom: -100%;
@@ -217,7 +215,7 @@ img{
       bottom: 100%;
     }
   }
-  
+   */
   .login-box p:last-child {
     color: #aaa;
     font-size: 14px;
@@ -275,24 +273,4 @@ img{
   button:hover span {
     transform: translateX(7px);
   }
-
-
-.loading-div {
-  width: 50px;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-#div_erros_login {
-  display: none
-}
-
-.alerta_erro{
-  display: flex;
-  justify-content: flex-end;
-}
 

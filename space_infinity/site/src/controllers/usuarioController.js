@@ -60,6 +60,29 @@ function entrar(req, res) {
 
 }
 
+function verificar_nickname(req, res) {
+    var nickname = req.body.nicknameServer;
+
+    if (nickname == undefined) {
+        res.status(400).send("O nickname está indefinido!");
+    } else {
+        usuarioModel.verificar_nickname(nickname)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.json({ nicknameCadastrado: true });
+                } else {
+                    res.json({ nicknameCadastrado: false });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao verificar o nickname! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nickname = req.body.nicknameServer;
@@ -167,5 +190,6 @@ module.exports = {
     testar,
     pontos_finais,
     ranking,
-    grafico
+    grafico,
+    verificar_nickname
 }

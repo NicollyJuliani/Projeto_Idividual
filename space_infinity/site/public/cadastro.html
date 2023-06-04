@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Cadastro</title>
+    <title> Space Infinity || Cadastro </title>
 
 
     <script src="./js/funcoes.js"></script>
@@ -23,11 +23,6 @@
 <body>
 
     <div class="container">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
         <div class="content">
             <div class="imagem">
                 <div class="frase">
@@ -35,7 +30,7 @@
                         conhecimentos sobre o universo</h1>
                 </div>
                 <div class="logo">
-                     <img src="./assets/imgs/Astronaut.png"> 
+                    <img src="./assets/imgs/Astronaut.png">
                 </div>
             </div>
             <div class="login-box">
@@ -43,20 +38,24 @@
                 <div class="divisao">
 
                     <div class="user-box">
-                        <input id="nome_input" type="text" placeholder="Seu nome">
+                        <input id="nome_input" type="text" placeholder="nickcanme">
                         <label>Nickname</label>
+                        <div id="div_erro"></div>
                     </div>
                     <div class="user-box">
-                        <input id="email_input" type="email" placeholder="meuemail@provedor.com">
+                        <input id="email_input" type="text" placeholder="meuemail@provedor.com">
                         <label>Email</label>
+                        <div id="div_email"></div>
                     </div>
                     <div class="user-box">
                         <input id="dtnasc_input" type="date" placeholder="00/00/0000">
                         <label>Data de Nascimento</label>
+
                     </div>
                     <div class="user-box">
                         <input id="senha_input" type="password" placeholder="******">
                         <label>Senha</label>
+                        <div id="div_senha"></div>
                     </div>
                     <button class="botao" onclick="cadastrar()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -69,70 +68,10 @@
                     </button>
                     <p class="cadastrar">Já tem uma conta?<a href="./login.html" class="a2"> Faça login</a></p>
                 </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login"></div>
-
             </div>
-            <!-- <div id="div_erros_login"></div> -->
+
         </div>
     </div>
-    <!-- 
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card card-cadastro">
-                <h2>Bem-vindo!</h2>
-                <div class="formulario"> -->
-
-    <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-    <!-- 
-                    <div class="campo">
-                        <span>Nome:</span>
-                        <input id="nome_input" type="text" placeholder="Seu nome">
-                    </div>
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="email" placeholder="meuemail@provedor.com">
-                    </div>
-                    <div class="campo">
-                        <span>CPF:</span>
-                        <input id="cpf_input" type="text" placeholder="000.000.000-00">
-                    </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
-                    </div>
-                    <div class="campo">
-                        <span>Confirmação da Senha:</span>
-                        <input id="confirmacao_senha_input" type="password" placeholder="******">
-                    </div>
-                    <button class="botao" onclick="cadastrar()">Cadastrar</button>
-
-                </div>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login"></div>
-            </div>
-        </div>
-    </div> -->
-
-    <!--footer inicio-->
-
-    <!--footer fim-->
-
 
 
 </body>
@@ -150,93 +89,111 @@
         var dtnascVar = dtnasc_input.value;
         // var cpfVar = cpf_input.value;
         var senhaVar = senha_input.value;
+        const spanErro = document.getElementById("span_erro")
         // var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
+        // nome_input.value = "";
+        // email_input.value = "";
+        // dtnasc_input.value = "";
+        // senha_input.value = "";
 
-        //    if(emailVar.indexOf("@") == -1 && emailVar.indexOf(".") == -1){
-        //         cardErro.style.display = "block"
-        //         mensagem_erro.innerHTML = "O email deve conter @ e .";
+        div_email.innerHTML = "";
+        div_senha.innerHTML = "";
+        div_erro.innerHTML = "";
 
-        //         finalizarAguardar();
-        //         return false;
-        //     } else if( senhaVar.length <= 6){
-        //         cardErro.style.display = "block"
-        //         mensagem_erro.innerHTML = "A senha deve conter no mínimo 6 caracteries";
 
-        //         finalizarAguardar();
-        //         return false;
-        //     }else if(confirmacaoSenhaVar  != senhaVar ){
-        //         cardErro.style.display = "block"
-        //         mensagem_erro.innerHTML = "Confime a senha";
-
-        //         finalizarAguardar();
-        //         return false;
-        //     } else if(cpfVar.length != 14){
-        //         cardErro.style.display = "block"
-        //         mensagem_erro.innerHTML = "CPF inválido";
-
-        //         finalizarAguardar();
-        //         return false;
         if (nicknameVar == "" || emailVar == "" || dtnascVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert("preencha o formulario")
 
-            // finalizarAguardar();
             return false;
+        } else if (!emailVar.includes("@gmail.com") && !emailVar.includes("@hotmail.com") && !emailVar.includes("@outlook.com")) {
+            div_email.innerHTML = `Email inválido deve conter @ e .`;
+        } else if (senhaVar.length <= 6) {
+            div_senha.innerHTML = `A senha deve conter mais de 6 caracteres`;
+        } else {
+            verificar_nickname(nicknameVar, function (error, nicknameCadastrado) {
+                if (error) {
+                    console.error(error);
+                    return;
+                }
+
+                if (nicknameCadastrado) {
+                    spanErro.style.display = "block";
+                    spanErro.innerHTML = "O Nickname já está cadastrado";
+                }
+                else {
+                    fetch("/usuarios/cadastrar", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            // crie um atributo que recebe o valor recuperado aqui
+                            // Agora vá para o arquivo routes/usuario.js
+
+                            nicknameServer: nicknameVar,
+                            emailServer: emailVar,
+                            dtnascServer: dtnascVar,
+                            senhaServer: senhaVar
+
+                        })
+                    }).then(function (resposta) {
+
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+                            // cardErro.style.display = "block";
+
+                            // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                            setTimeout(() => {
+                                window.location = "login.html";
+                            }, "2000")
+
+                            limparFormulario();
+                            // finalizarAguardar();
+                        } else {
+                            throw new Error("Houve um erro ao tentar realizar o cadastro!");
+                        }
+                    }).catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                        // finalizarAguardar();
+                    });
+
+                    return false;
+                }
+            });
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+    }
 
 
+    var nickname = sessionStorage.NICKNAME_USUARIO;
+    console.log(nickname)
 
-
-
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+    function verificar_nickname(nickname, callback) {
+        fetch("/usuarios/verificar_nickname", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                
-                nicknameServer: nicknameVar,
-                emailServer: emailVar,
-                dtnascServer: dtnascVar,
-                // cpfServer: cpfVar,
-                senhaServer: senhaVar
+                nicknameServer: nickname
             })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-
-                limparFormulario();
-                // finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
-
-        return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Erro na verificação do nickname");
+                }
+            })
+            .then(function (data) {
+                callback(null, data.nicknameCadastrado);
+            })
+            .catch(function (error) {
+                div_erro.innerHTML = `Nickname já cadastrado`;
+                callback(error);
+            });
     }
 
 </script>

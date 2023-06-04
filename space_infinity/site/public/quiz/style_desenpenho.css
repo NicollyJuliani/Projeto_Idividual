@@ -66,8 +66,8 @@
 }
 
 .card-analise {
-    width: 350px;
-    height: 150px;
+    width: 370px;
+    height: 160px;
     color: #ffffff;
     border-radius: 10px;
     display: flex;
@@ -75,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 5%;
-    margin-left: 30%;
+    margin-left: 26%;
     border: 2px solid white;
 }
 

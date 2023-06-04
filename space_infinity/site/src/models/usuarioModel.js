@@ -33,6 +33,14 @@ function cadastrar(nickname, email, dtNasc, senha) {
   return database.executar(instrucao);
 }
 
+
+function verificar_nickname(nickname) {
+  var instrucao = `SELECT * FROM usuario WHERE nickname = '${nickname}'`;
+  
+  return database.executar(instrucao);
+}
+
+
 function pontos_finais(fkUsuario, pontosFinais) {
   var instrucao = `
       INSERT INTO pontosUsuario (fkUsuario, pontuacao) 
@@ -93,5 +101,6 @@ module.exports = {
   obterNomeUsuario,
   ranking,
   grafico,
-  validarNome
+  validarNome,
+  verificar_nickname
 };
