@@ -50,13 +50,10 @@
         <div class="frase_conteudo">
           <p>
             <span class="space">SPACE INFINITY</span> <br>
-            <!--<img class="img_logo" src="./logo.png" >  
-          <br><br>  -->
             &nbsp;&nbsp; O <b style="color:#47077F;">universo</b> está além <br>
             &nbsp;&nbsp; da nossa <b style="color:#47077F;">imaginação</b>
           </p>
-          
-          <button id="btn_saiba_mais">saiba mais</button>
+          <button id="btn_saiba_mais" onclick="saibaMais()">saiba mais</button></a>
         </div>
       </div>
     </div>
@@ -89,7 +86,7 @@
     </div>
   </div>
 
-
+<!-- Sistem solar -->
   <div class="planets">
     <div class="organizador">
       <h1 class="titulo_2" style="color: #47077F;">Como é nosso sistema solar?</h1>
@@ -192,7 +189,7 @@
     </div>
   </div>
 
-
+<!-- Script para o carrossel -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var carousel = document.querySelector(".carousel");
@@ -221,6 +218,7 @@
     });
   </script>
 
+<!-- Viagem espacial -->
   <div class="viagem">
     <div class="container">
       <div class="content_viagem">
@@ -277,6 +275,7 @@
   </div>
   </div>
 
+  <!-- Propagando sobre o quiz -->
   <div class="jogo-quiz">
     <div class="conteiner">
       <div class="divulgacao">
@@ -322,10 +321,13 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>
 
 <script>
+
+  function saibaMais(){
+    window.location = '#bigbang'
+  }
 
   function btn_cadastrar(){
     window.location = 'cadastro.html';

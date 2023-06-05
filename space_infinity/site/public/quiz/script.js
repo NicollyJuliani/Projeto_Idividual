@@ -79,10 +79,6 @@ fetch("/usuarios/pontos_finais", {
           console.log(JSON.stringify(json));
           console.log("Respota com sucesso");
 
-          // sessionStorage.EMAIL_USUARIO = json.email;
-          // sessionStorage.NICKNAME_USUARIO = json.nickname;
-          // sessionStorage.IDUSUARIO_USUARIO = json.idUsuario;
-
           console.log(pontos)
       });
 

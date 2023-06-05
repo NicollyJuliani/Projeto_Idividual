@@ -57,6 +57,7 @@
                         <label>Senha</label>
                         <div id="div_senha"></div>
                     </div>
+                    <div id="mensagem_erro" style="color: white;">
                     <button class="botao" onclick="cadastrar()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="none" d="M0 0h24v24H0z"></path>
@@ -144,7 +145,7 @@
                         if (resposta.ok) {
                             // cardErro.style.display = "block";
 
-                            // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                            mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                             setTimeout(() => {
                                 window.location = "login.html";

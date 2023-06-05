@@ -59,3 +59,6 @@ WHERE fkUsuario = 15 limit 10;
 
 /*Select para mostar somente os nomes dos usuarios*/
 SELECT nickname FROM usuario;
+
+delete from pontosUsuario WHERE fkUsuario = 3;
+delete from usuario WHERE idUsuario = 3
